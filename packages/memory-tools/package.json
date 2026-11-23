@@ -1,0 +1,7 @@
+{
+  "name": "@seventech/memory-tools",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

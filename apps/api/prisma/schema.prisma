@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+}
+enum Role {
+  ADMIN
+  PARTICIPANT
+}
+model Competition {
+  id Int @id @default(1)
+  open Boolean @default(true)
+  closedAt DateTime?
+  revision Int @default(0)
+  updatedAt DateTime @default(now()) @updatedAt
+}
+
+model User {
+  id String @id @default(cuid())
+  alias String @unique
+  passwordHash String
+  role Role @default(PARTICIPANT)
+  createdAt DateTime @default(now())
+  sessions Session[]
+  solves Solve[]
+  submissions Submission[]
+  networkLabs NetworkLab[]
+  linuxNetwork LinuxNetwork?
+  domainLab DomainLab?
+  windowsLab WindowsLab?
+  privilegedLab PrivilegedLab?
+  otLab OtLab?
+  audits AuditLog[]
+}
+model Session {
+  id String @id @default(cuid())
+  tokenHash String @unique
+  scope String @default("game")
+  userId String
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  @@index([expiresAt])
+}
+model Challenge {
+  id String @id
+  title String
+  description String
+  category String
+  device String
+  points Int
+  enabled Boolean @default(true)
+  flagVerifier String
+  createdAt DateTime @default(now())
+  solves Solve[]
+  submissions Submission[]
+}
+model Solve {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields:[userId],references:[id],onDelete:Restrict)
+  challengeId String
+  challenge Challenge @relation(fields:[challengeId],references:[id],onDelete:Restrict)
+  points Int
+  createdAt DateTime @default(now())
+  @@unique([userId,challengeId])
+}
+model Submission {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields:[userId],references:[id],onDelete:Restrict)
+  challengeId String
+  challenge Challenge @relation(fields:[challengeId],references:[id],onDelete:Restrict)
+  correct Boolean
+  createdAt DateTime @default(now())
+  @@index([userId,createdAt])
+}
+model AuditLog {
+  id String @id @default(cuid())
+  userId String
+  user User @relation(fields:[userId],references:[id],onDelete:Restrict)
+  action String
+  target String
+  createdAt DateTime @default(now())
+}
+model NetworkLab {
+  userId String
+  scenarioId String
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  revision Int @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@id([userId,scenarioId])
+}
+
+model LinuxNetwork {
+  userId String @id
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DomainLab {
+  userId String @id
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PrivilegedLab {
+  userId String @id
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  completedAt DateTime?
+  awardedPoints Int @default(0)
+  incorrectSubmissions Int @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model OtLab {
+  userId String @id
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  revision Int @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RegistrationProof {
+  tokenHash String @id
+  deviceHash String
+  ipHash String
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  expiresAt DateTime @db.Timestamptz(3)
+  consumedAt DateTime? @db.Timestamptz(3)
+  @@index([expiresAt])
+}
+
+model RegistrationQuota {
+  key String @id
+  count Int @default(0)
+  expiresAt DateTime @db.Timestamptz(3)
+  @@index([expiresAt])
+}
+
+model WindowsLab {
+  userId String @id
+  user User @relation(fields:[userId],references:[id],onDelete:Cascade)
+  state Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

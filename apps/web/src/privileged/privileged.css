@@ -1,0 +1,109 @@
+.maintenance-console {
+  min-height: 100%;
+  color: #223246;
+  background: #edf1f6;
+  font:
+    14px/1.6 system-ui,
+    sans-serif;
+}
+.maintenance-console :is(input, textarea, select) {
+  background: white;
+  color: #172536;
+  border: 1px solid #8d9eb1;
+  border-radius: 4px;
+  min-height: 44px;
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+}
+.maintenance-console textarea {
+  min-height: 100px;
+  resize: vertical;
+  font: 13px/1.5 monospace;
+}
+.maintenance-console label {
+  display: grid;
+  gap: 6px;
+  color: #34465c;
+  font-size: 13px;
+}
+.maintenance-console button {
+  min-height: 44px;
+  border: 1px solid #365d89;
+  border-radius: 4px;
+  padding: 10px 16px;
+  background: #214e7f;
+  color: white;
+}
+.maintenance-console :is(button, input, select, textarea):focus-visible {
+  outline: 3px solid #b16c08;
+  outline-offset: 2px;
+}
+.maintenance-console .maintenance-address {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  padding: 12px;
+  background: #dce4ee;
+}
+.maintenance-address label {
+  flex: 1;
+  min-width: 0;
+}
+.maintenance-console > header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 22px;
+  color: white;
+  background: #153958;
+}
+.maintenance-console header strong {
+  display: block;
+  font-size: 22px;
+}
+.maintenance-console header small {
+  color: #d5e0eb;
+}
+.maintenance-content {
+  padding: 24px;
+}
+.maintenance-console h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+.maintenance-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.maintenance-operation {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+.maintenance-evidence {
+  display: grid;
+  gap: 12px;
+  margin-block: 20px;
+}
+.maintenance-evidence textarea {
+  min-height: 200px;
+}
+.maintenance-error {
+  background: #fce5df;
+  border: 1px solid #b94734;
+  padding: 12px;
+  color: #8c2617;
+}
+@media (max-width: 600px) {
+  .maintenance-content {
+    padding: 16px;
+  }
+}
+.maintenance-console .flag-input {
+  --flag-input-bg: #fff;
+  --flag-input-text: #172536;
+  --flag-input-border: #8d9eb1;
+  --flag-input-marker: #526581;
+  --flag-input-focus: #176fb3;
+}

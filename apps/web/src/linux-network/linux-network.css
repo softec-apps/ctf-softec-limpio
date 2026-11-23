@@ -1,0 +1,151 @@
+.window-vpn {
+  width: 560px;
+  height: 680px;
+}
+.corporate-vpn-app {
+  flex: 1;
+  min-height: 0;
+  padding: 24px;
+  overflow: auto;
+  color: #d8e4ed;
+  background: #151f29;
+  font:
+    13px/1.5 "DM Sans",
+    sans-serif;
+}
+.corporate-vpn-app button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #405668;
+  border-radius: 5px;
+  background: #253747;
+  color: #edf5fc;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.corporate-vpn-app button:hover {
+  background: #30495e;
+}
+.corporate-vpn-app button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.corporate-vpn-app button:focus-visible,
+.corporate-vpn-app summary:focus-visible {
+  outline: 2px solid #9adac3;
+  outline-offset: 2px;
+}
+.corporate-vpn-app > header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.corporate-vpn-app h1 {
+  font-size: 19px;
+  margin: 0;
+}
+.corporate-vpn-app header p {
+  color: #b5c6d2;
+  margin: 4px 0 0;
+}
+.corporate-vpn-profile {
+  border: 1px solid #405668;
+  border-radius: 8px;
+  padding: 18px;
+  background: #1b2b37;
+}
+.corporate-vpn-profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.corporate-vpn-profile-heading > span {
+  margin-left: auto;
+  color: #bfe1cf;
+  font-size: 12px;
+}
+.corporate-vpn-profile dl {
+  margin: 18px 0;
+}
+.corporate-vpn-profile dl > div {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #354958;
+}
+.corporate-vpn-profile dt {
+  color: #b6c8d5;
+}
+.corporate-vpn-profile dd {
+  margin: 0;
+  text-align: right;
+  font-family: monospace;
+}
+.corporate-vpn-app .corporate-vpn-toggle {
+  width: 100%;
+  min-height: 40px;
+  background: #34566a;
+}
+.corporate-vpn-guidance {
+  color: #b9c9d5;
+  margin: 20px 0;
+}
+.corporate-vpn-entry {
+  border: 1px solid #405668;
+  border-radius: 5px;
+  padding: 12px;
+  margin: 0 0 20px;
+}
+.corporate-vpn-entry summary {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+.corporate-vpn-entry code {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #c7e8da;
+}
+.corporate-vpn-entry p {
+  margin: 12px 0 5px;
+}
+.corporate-vpn-entry .kit-copy-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+.corporate-vpn-entry .kit-copy-status {
+  font-size: 11px;
+  color: #bfd8cc;
+}
+.corporate-vpn-app [role="alert"] {
+  color: #ffcfb0;
+}
+.corporate-vpn-entry blockquote {
+  margin: 14px 0;
+  padding: 10px 14px;
+  border-left: 2px solid #718c80;
+  color: #d8e9df;
+  font-style: italic;
+  line-height: 1.7;
+}
+@media (max-width: 700px) {
+  .corporate-vpn-app {
+    padding: 16px;
+  }
+  .corporate-vpn-profile {
+    padding: 12px;
+  }
+  .corporate-vpn-profile dl > div {
+    flex-wrap: wrap;
+  }
+  .corporate-vpn-app button {
+    min-height: 40px;
+  }
+}

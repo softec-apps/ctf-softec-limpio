@@ -1,0 +1,695 @@
+.entrance-hall {
+  --door-height: min(
+    82svh,
+    860px,
+    calc(100svh - 130px),
+    calc((100vw - 48px) * 1.72)
+  );
+  --hall-floor-line: calc(50% + 25px + var(--door-height) / 2);
+  --hall-ink: #dce8ee;
+  --hall-panel: #24313b;
+  --hall-cyan: #9ee5d4;
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #202c35;
+  color: var(--hall-ink);
+  font-family: Inter, Arial, sans-serif;
+}
+.hall-heading {
+  position: absolute;
+  top: 25px;
+  left: 32px;
+  right: 32px;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hall-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hall-brand > span {
+  font-size: 38px;
+  font-weight: 700;
+  color: #83b4d2;
+}
+.hall-brand > div {
+  font-size: 18px;
+  font-weight: 600;
+}
+.hall-brand small {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: #b4c7d3;
+  margin-top: 3px;
+}
+.hall-location {
+  font-size: 12px;
+  color: #bfced7;
+}
+.hall-space {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+.hall-back-wall {
+  position: absolute;
+  inset: 6% 12% calc(100% - var(--hall-floor-line));
+  background: linear-gradient(90deg, #71818a, #abb4b7 50%, #77858d);
+  box-shadow: inset 0 0 120px #15252d60;
+}
+.hall-wall {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #283842, #687a84);
+  clip-path: polygon(0 0, 18% 8%, 18% var(--hall-floor-line), 0 100%);
+}
+.hall-wall-right {
+  transform: scaleX(-1);
+  background: linear-gradient(90deg, #1c2d38, #657883);
+}
+.hall-ceiling {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#23313b, #697c84);
+  clip-path: polygon(0 0, 100% 0, 82% 8%, 18% 8%);
+}
+.hall-floor {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(
+    18% var(--hall-floor-line),
+    82% var(--hall-floor-line),
+    100% 100%,
+    0 100%
+  );
+  background:
+    linear-gradient(90deg, transparent 49.8%, #b2c2c520 50%, transparent 50.2%),
+    repeating-linear-gradient(
+      0deg,
+      #2b3c46 0px,
+      #2b3c46 60px,
+      #50616a 61px,
+      #2b3c46 63px
+    );
+}
+.hall-light {
+  position: absolute;
+  top: 4%;
+  left: 43%;
+  width: 14%;
+  height: 5px;
+  background: #e2efed;
+  box-shadow: 0 0 20px 10px #d5f4ed30;
+  transform: perspective(150px) rotateX(-50deg);
+}
+.hall-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100svh;
+  padding: 90px 24px 40px;
+  box-sizing: border-box;
+}
+.hall-doorway {
+  position: relative;
+  height: var(--door-height);
+  width: calc(var(--door-height) * 3 / 7);
+  aspect-ratio: 3 / 7;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border: clamp(6px, calc(var(--door-height) * 0.015), 12px) solid #394b56;
+  border-bottom-width: 5px;
+  background: #101e27;
+  box-shadow:
+    0 10px 25px #17232b70,
+    inset 0 0 12px #0008;
+  perspective: 1000px;
+}
+.hall-door {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #596d78, #70848f 45%, #536973);
+  border: 2px solid #8e9aa0;
+  border-bottom: 0;
+  box-shadow: inset 0 0 0 7px #526873;
+  transition: transform 0.65s ease;
+  backface-visibility: hidden;
+}
+.hall-door-window {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+  right: 12%;
+  height: 30%;
+  background: linear-gradient(145deg, #b1d0d3a0, #3f596b70);
+  border: 5px solid #3b5260;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px #1c3d4e90;
+  color: #e5eeee;
+}
+.hall-door-window span {
+  font-size: clamp(13px, calc(var(--door-height) * 0.03), 24px);
+  letter-spacing: 0.5px;
+}
+.hall-door-window small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 9px;
+}
+.hall-door-handle {
+  position: absolute;
+  top: 57%;
+  right: 7%;
+  width: 18%;
+  height: 1.6%;
+  background: linear-gradient(#c2ced1, #6d838b);
+  border-radius: 3px;
+  box-shadow: 0 4px 5px #17232a80;
+}
+.hall-door-kickplate {
+  position: absolute;
+  bottom: 4%;
+  left: 5%;
+  right: 5%;
+  height: 10%;
+  background: linear-gradient(135deg, #82959d, #4d626c);
+  border: 1px solid #9aabb1;
+}
+.hall-room-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#b6cbce, #7c969d 60%, #203846);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+.is-opening .hall-door {
+  transform: rotateY(-100deg);
+}
+.is-opening .hall-room-glow {
+  opacity: 1;
+}
+.hall-threshold {
+  position: absolute;
+  bottom: -9px;
+  left: -18px;
+  right: -18px;
+  height: 8px;
+  background: #a1afb3;
+  box-shadow: 0 4px 7px #15252d80;
+}
+.hall-panel {
+  width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 18px;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #ffffff04 0,
+      #ffffff04 1px,
+      #00000003 1px,
+      #00000003 3px
+    ),
+    linear-gradient(125deg, #566771, #2b3b44 35%, #354651 70%, #223039);
+  border: 2px solid #72828a;
+  border-radius: 8px;
+  box-shadow:
+    5px 12px 18px #20313c70,
+    inset 0 0 0 3px #1c2c35;
+}
+.hall-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: #c3d4dc;
+  margin-bottom: 12px;
+}
+.hall-panel-heading i {
+  margin-left: auto;
+  background: #ce9c66;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.hall-panel-heading i.is-open {
+  background: #9ee5b5;
+}
+.hall-panel label {
+  font-size: 10px;
+  color: #c0d2dc;
+  display: block;
+  margin: 0 0 7px;
+}
+.hall-display {
+  position: relative;
+  height: 48px;
+  border: 2px solid #182529;
+  border-radius: 3px;
+  background: #102b2c;
+  color: #b8f3d7;
+  box-shadow:
+    0 1px 0 #9baaaa70,
+    inset 0 3px 8px #000a,
+    inset 0 0 0 1px #719086;
+}
+.hall-display::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: 2px;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      120deg,
+      #d6fff81c,
+      transparent 42%,
+      #ffffff09 62%,
+      transparent 78%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #00000012 0,
+      #00000012 1px,
+      transparent 1px,
+      transparent 3px
+    );
+}
+.hall-panel .hall-code {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 2px;
+  background: transparent;
+  color: inherit;
+  font: 24px/1.2 monospace;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 8px 3px;
+  box-shadow: none;
+  text-shadow: 0 0 5px #92efc942;
+}
+.hall-display:focus-within {
+  outline: 2px solid #b5f2dd;
+  outline-offset: 3px;
+}
+.hall-display .hall-code:focus-visible {
+  outline: none;
+}
+.hall-display.has-message .hall-code {
+  color: transparent;
+  caret-color: transparent;
+  text-shadow: none;
+}
+.hall-display-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0 4px;
+  font: 13px/1.25 monospace;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow: 0 0 5px currentColor;
+  pointer-events: none;
+}
+.hall-display.is-error {
+  background: #331a13;
+  color: #ffb89d;
+  box-shadow:
+    0 1px 0 #9baaaa70,
+    inset 0 3px 8px #000a,
+    inset 0 0 0 1px #8f5547;
+}
+.hall-panel-heading i.is-error,
+.hall-panel-preview > i.is-error {
+  background: #ff7157;
+  box-shadow: 0 0 5px #fa684b90;
+}
+.hall-mini-display.is-error {
+  color: #ffb89d;
+  background: #331a13;
+  border-color: #8f5547;
+}
+
+.hall-code::placeholder {
+  color: #679082;
+  opacity: 0.8;
+}
+.hall-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 15px 0;
+}
+.hall-keypad button,
+.hall-unlock {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid #637985;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5edf1;
+  min-height: 44px;
+  background: linear-gradient(#687b87, #465b69 14%, #344954);
+  box-shadow:
+    inset 0 1px 0 #c7d5dc55,
+    inset 0 -2px 0 #162730,
+    0 2px 2px #10212a;
+  font-size: 17px;
+}
+.hall-keypad button:hover:not(:disabled) {
+  background: #526f7c;
+}
+.hall-keypad button:active:not(:disabled) {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+.hall-panel button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.hall-panel :focus-visible {
+  outline: 2px solid #b5f2dd;
+  outline-offset: 3px;
+}
+.hall-unlock {
+  width: 100%;
+  gap: 7px;
+  font-size: 11px;
+  min-height: 44px;
+  background: #265b5b;
+  border-color: #6b9c99;
+}
+.hall-unlock:hover:not(:disabled) {
+  background: #347574;
+}
+
+.office-entry-notice {
+  position: fixed;
+  z-index: 45;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, calc(100% - 32px));
+  box-sizing: border-box;
+  padding: 18px 20px;
+  background: #eef4f4;
+  color: #233e4c;
+  border: 1px solid #9cb5bc;
+  box-shadow: 0 10px 40px #0b203c60;
+  border-radius: 7px;
+  font:
+    14px/1.55 Inter,
+    Arial,
+    sans-serif;
+}
+.office-entry-notice strong {
+  display: block;
+  font-size: 16px;
+}
+.office-entry-notice p {
+  margin: 6px 0 12px;
+}
+.office-entry-notice button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid #32667c;
+  background: #285b71;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+.office-entry-notice button:focus-visible {
+  outline: 3px solid #167cb0;
+  outline-offset: 3px;
+}
+.entrance-loading {
+  min-height: 100svh;
+  display: grid;
+  place-content: center;
+  background: #202c35;
+  color: #dce8ee;
+  text-align: center;
+  font:
+    16px/1.5 Inter,
+    Arial,
+    sans-serif;
+}
+@media (max-width: 600px) {
+  .hall-heading {
+    top: 17px;
+    left: 20px;
+    right: 20px;
+  }
+  .hall-location {
+    display: none;
+  }
+  .hall-brand > span {
+    font-size: 31px;
+  }
+  .hall-brand > div {
+    font-size: 16px;
+  }
+  .hall-wall {
+    clip-path: polygon(0 0, 4% 8%, 4% var(--hall-floor-line), 0 100%);
+  }
+  .hall-back-wall {
+    inset: 6% 0 calc(100% - var(--hall-floor-line));
+  }
+  .hall-ceiling {
+    clip-path: polygon(0 0, 100% 0, 96% 8%, 4% 8%);
+  }
+  .hall-floor {
+    clip-path: polygon(
+      4% var(--hall-floor-line),
+      96% var(--hall-floor-line),
+      100% 100%,
+      0 100%
+    );
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hall-door,
+  .hall-room-glow {
+    transition: none;
+  }
+}
+
+.office-exit-control {
+  position: fixed;
+  z-index: 46;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #66858e;
+  border-radius: 5px;
+  background: #17343c;
+  color: #e5f0ef;
+  cursor: pointer;
+  font:
+    12px/1.4 Inter,
+    Arial,
+    sans-serif;
+}
+.office-exit-control:hover {
+  background: #28515b;
+}
+.office-exit-control:focus-visible {
+  outline: 3px solid #b5f2dd;
+  outline-offset: 3px;
+}
+.office-exit-control:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.office-exit-error {
+  position: fixed;
+  top: 76px;
+  right: 24px;
+  z-index: 47;
+  max-width: min(320px, calc(100% - 48px));
+  padding: 14px;
+  background: #fff1ed;
+  color: #7c3026;
+  border: 1px solid #bf8478;
+  border-radius: 5px;
+  font:
+    13px/1.5 Inter,
+    Arial,
+    sans-serif;
+}
+.office-exit-error button {
+  display: block;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #bf8478;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .office-entry-notice {
+    top: 140px;
+  }
+  .office-exit-control {
+    top: 78px;
+    right: 16px;
+  }
+  .office-exit-error {
+    top: 130px;
+    right: 16px;
+  }
+}
+
+.hall-assembly {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--door-height) * 0.045);
+  transform: perspective(1600px) rotateY(-6deg);
+  transform-style: preserve-3d;
+}
+.hall-wall-panel {
+  position: relative;
+  display: block;
+  flex: none;
+  box-sizing: border-box;
+  width: calc(var(--door-height) * 0.095);
+  height: calc(var(--door-height) * 0.155);
+  margin-top: calc(var(--door-height) * 0.34);
+  padding: 0;
+  border: 1px solid #83969e;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #465761, #23343e);
+  box-shadow:
+    3px 4px 8px #16232e90,
+    inset 0 0 0 2px #1d303a;
+  cursor: pointer;
+  color: #cbeee2;
+}
+.hall-wall-panel:hover {
+  border-color: #b8ddd9;
+  box-shadow:
+    3px 4px 8px #16232e90,
+    0 0 0 2px #b8ddd940;
+}
+.hall-wall-panel:focus-visible {
+  outline: 3px solid #b5f2dd;
+  outline-offset: 5px;
+}
+.hall-wall-panel::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+  transform: translate(-50%, -50%);
+}
+.hall-panel-preview {
+  position: absolute;
+  inset: 9%;
+  display: flex;
+  flex-direction: column;
+  gap: 7%;
+  pointer-events: none;
+}
+.hall-panel-preview > i {
+  display: block;
+  align-self: flex-end;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ce9c66;
+  flex-shrink: 0;
+}
+.hall-panel-preview > i.is-open {
+  background: #9ee5b5;
+}
+.hall-mini-display {
+  display: grid;
+  place-items: center;
+  height: 23%;
+  flex-shrink: 0;
+  background: #102b2c;
+  border: 1px solid #6b8f85;
+  border-radius: 1px;
+  color: #b8f3d7;
+  font: clamp(5px, calc(var(--door-height) * 0.012), 10px)/1 monospace;
+  overflow: hidden;
+}
+.hall-mini-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 3%;
+  flex: 1;
+  min-height: 0;
+}
+.hall-mini-keypad > span {
+  display: grid;
+  place-items: center;
+  border: 1px solid #617581;
+  border-radius: 1px;
+  background: #405661;
+  font: clamp(4px, calc(var(--door-height) * 0.009), 7px)/1 monospace;
+  color: #cfdae0;
+}
+.hall-panel-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  width: 280px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100svh - 32px);
+  overflow: auto;
+  background: #24313b;
+  color: #dce8ee;
+  box-shadow: 0 20px 70px #07111ccc;
+}
+.hall-panel-dialog::backdrop {
+  background: #081520b8;
+}
+.hall-panel-close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: 0;
+  color: #dce8ee;
+  background: transparent;
+  border: 1px solid #617985;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.hall-panel-heading > .hall-panel-close:hover {
+  background: #3b5361;
+}

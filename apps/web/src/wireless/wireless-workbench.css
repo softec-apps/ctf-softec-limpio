@@ -1,0 +1,153 @@
+.wireless-workbench {
+  min-width: 0;
+  margin: 20px 0;
+  padding: 18px;
+  border: 1px solid #46636c;
+  border-radius: 8px;
+  background: #10232d;
+  color: #e0edf0;
+}
+.wireless-workbench header,
+.wireless-workbench nav,
+.wireless-workbench form > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.wireless-workbench header {
+  justify-content: space-between;
+}
+.wireless-workbench nav {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.wireless-workbench h3 {
+  margin: 0;
+  color: #e0edf0;
+}
+.wireless-workbench button {
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #62818a;
+  border-radius: 4px;
+  background: #1a3c48;
+  color: #e0edf0;
+  cursor: pointer;
+}
+.wireless-workbench button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.wireless-workbench :is(button, input, summary, pre):focus-visible {
+  outline: 2px solid #86e3d3;
+  outline-offset: 3px;
+}
+.wireless-workbench details {
+  margin: 14px 0;
+}
+.wireless-workbench summary {
+  padding: 8px 0;
+  cursor: pointer;
+}
+.wireless-workbench pre {
+  max-height: 420px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 13px/1.6 monospace;
+}
+.wireless-workbench .wireless-output {
+  min-height: 150px;
+  padding: 14px;
+  border: 1px solid #46636c;
+  background: #091820;
+}
+.wireless-workbench form {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+.wireless-workbench form input {
+  flex: 1 1 160px;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px;
+  border: 1px solid #62818a;
+  border-radius: 4px;
+  background: #091820;
+  color: #e0edf0;
+  font: 14px monospace;
+}
+.wireless-workbench .wireless-checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.wireless-workbench .wireless-checks li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid #46636c;
+  font: 12px/1.5 monospace;
+  overflow-wrap: anywhere;
+}
+.wireless-workbench p {
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.wireless-workbench [role="alert"] {
+  padding: 12px;
+  border-left: 3px solid #ffb2a7;
+  color: #ffcec7;
+}
+.wireless-workbench .wireless-assessment {
+  margin: 18px 0;
+  padding: 14px;
+  border: 1px solid #62818a;
+  border-radius: 5px;
+  min-width: 0;
+}
+.wireless-workbench .wireless-assessment h4 {
+  margin: 0;
+  font-size: 17px;
+}
+.wireless-workbench .wireless-assessment-brief {
+  white-space: pre-line;
+}
+.wireless-workbench .wireless-assessment form {
+  min-width: 0;
+  gap: 14px;
+}
+.wireless-workbench .wireless-assessment label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  font-size: 14px;
+}
+.wireless-workbench .wireless-assessment label span {
+  font-weight: normal;
+  line-height: 1.5;
+}
+.wireless-workbench .wireless-assessment select {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #62818a;
+  border-radius: 4px;
+  background: #091820;
+  color: #e0edf0;
+  text-overflow: ellipsis;
+}
+.wireless-workbench .wireless-assessment select:focus-visible {
+  outline: 2px solid #86e3d3;
+  outline-offset: 3px;
+}

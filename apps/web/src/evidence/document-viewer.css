@@ -1,0 +1,214 @@
+.document-reader {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #e9edf2;
+  color: #253246;
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.document-text-content {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  border: 0;
+  padding: 20px;
+  background: white;
+  color: #253246;
+  font: 13px/1.8 monospace;
+  user-select: text;
+}
+.document-text-content:focus-visible {
+  outline: 2px solid #526f99;
+  outline-offset: -2px;
+}
+.document-reader .kit-copy-control {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 180px;
+}
+.document-reader .kit-copy-control button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.document-reader .kit-copy-status {
+  font-size: 11px;
+  color: #365b50;
+}
+.document-reader > header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f9fafc;
+  border-bottom: 1px solid #ccd3df;
+  padding: 14px;
+  flex-shrink: 0;
+}
+.document-reader > header > div {
+  flex: 1;
+  display: grid;
+  gap: 5px;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.document-reader small {
+  font-size: 11px;
+  color: #647084;
+}
+.document-reader button {
+  padding: 8px 11px;
+  border: 1px solid #c5ccd6;
+  border-radius: 4px;
+  background: white;
+  color: #31415b;
+  font-size: 11px;
+}
+.document-reader > pre {
+  margin: 0;
+  padding: 20px;
+  white-space: pre-wrap;
+  overflow: auto;
+  font: 12px/1.8 monospace;
+}
+.document-table-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.document-table-search input {
+  flex: 1;
+  border: 1px solid #bac6d8;
+  background: #fff;
+  color: #223246;
+  padding: 7px;
+  min-width: 0;
+}
+.document-table-scroll {
+  flex: 1;
+  overflow: auto;
+  background: white;
+}
+.document-table-scroll table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.document-table-scroll th,
+.document-table-scroll td {
+  padding: 9px 12px;
+  border-right: 1px solid #e0e5ec;
+  border-bottom: 1px solid #e0e5ec;
+  text-align: left;
+}
+.document-table-scroll thead th {
+  background: #eaf0f7;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-weight: 500;
+}
+.document-table-scroll tbody th {
+  color: #7a8595;
+  background: #f5f7fa;
+  font-weight: 400;
+}
+.document-table-scroll tbody tr:hover {
+  background: #edf5ff;
+}
+.document-reader footer {
+  font-size: 11px;
+  padding: 8px 15px;
+  border-top: 1px solid #ccd3df;
+}
+.document-paper {
+  background: white;
+  margin: 22px auto;
+  padding: 35px clamp(15px, 5vw, 45px);
+  width: calc(100% - 50px);
+  max-width: 700px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 9px #27364a20;
+  overflow: auto;
+  min-height: 60%;
+  font:
+    14px/1.9 Georgia,
+    serif;
+}
+.document-paper p {
+  white-space: pre-wrap;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.document-property-sheet {
+  background: white;
+  margin: 18px;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #d0d8e5;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.document-property-sheet h2 {
+  font-size: 17px;
+  margin: 0 0 15px;
+}
+.document-property-sheet dl > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e7f0;
+}
+.document-property-sheet dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.document-property-sheet dt {
+  color: #617086;
+}
+.document-property-sheet > p {
+  color: #647084;
+  font-size: 11px;
+  margin-top: 20px;
+}
+.document-registry {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.document-registry aside {
+  background: #f6f8fb;
+  border-right: 1px solid #d0d8e5;
+  width: 150px;
+  padding: 15px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.document-registry pre {
+  white-space: pre-wrap;
+  font: 12px/1.8 monospace;
+  padding: 15px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .document-reader > header {
+    flex-wrap: wrap;
+  }
+  .document-property-sheet dl > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .document-registry aside {
+    width: 80px;
+  }
+}

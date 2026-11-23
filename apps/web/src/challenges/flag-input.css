@@ -1,0 +1,57 @@
+.flag-input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--flag-input-border, #55637b);
+  border-radius: 4px;
+  background: var(--flag-input-bg, #1b2330);
+  color: var(--flag-input-text, #e4ebf7);
+  cursor: text;
+}
+.flag-input > .flag-input-content {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: 10px 4px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  color: var(--flag-input-text, #e4ebf7);
+  font:
+    14px Consolas,
+    "Courier New",
+    monospace;
+}
+.flag-input > .flag-input-content::placeholder {
+  color: var(--flag-input-marker, #a9bdc5);
+  opacity: 0.85;
+}
+.flag-input > :is(.flag-input-prefix, .flag-input-suffix) {
+  flex-shrink: 0;
+  color: var(--flag-input-marker, #a9bdc5);
+  font:
+    600 14px Consolas,
+    "Courier New",
+    monospace;
+}
+.flag-input-prefix {
+  padding-left: 12px;
+}
+.flag-input-suffix {
+  padding-right: 12px;
+}
+.flag-input:focus-within {
+  outline: 2px solid var(--flag-input-focus, #e5ba73);
+  outline-offset: 2px;
+}
+.flag-input > .flag-input-content:focus-visible {
+  outline: none;
+}
+.flag-input[data-disabled] {
+  opacity: 0.65;
+}

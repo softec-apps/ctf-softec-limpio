@@ -1,0 +1,510 @@
+.ot-overlay {
+  position: absolute;
+  z-index: 4;
+  top: 102px;
+  right: 28px;
+  bottom: 102px;
+  width: min(550px, 46vw);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.ot-overlay[hidden] {
+  display: none;
+}
+.ot-experience {
+  --ot-ink: #e5ece9;
+  --ot-muted: #a0b1b3;
+  --ot-line: #3d5054;
+  --ot-accent: #efb464;
+  color: var(--ot-ink);
+  font-family: Inter, system-ui, sans-serif;
+  padding: 5px 8px 12px;
+}
+.ot-experience button {
+  font: inherit;
+  min-height: 44px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--ot-line);
+  border-radius: 5px;
+  background: #283b40;
+  color: var(--ot-ink);
+  padding: 10px 13px;
+}
+.ot-experience button:hover {
+  background: #355055;
+}
+.ot-experience button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.ot-experience :is(button, input, textarea):focus-visible {
+  outline: 2px solid var(--ot-accent);
+  outline-offset: 3px;
+}
+.ot-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+.ot-caption button {
+  font-size: 12px;
+  letter-spacing: normal;
+  background: #1f2c30dc;
+}
+.ot-hmi-shell {
+  background: #17282d;
+  border: 8px solid #485357;
+  border-radius: 10px;
+  box-shadow:
+    0 15px 45px #0008,
+    inset 0 0 0 1px #95a6a320;
+  overflow: hidden;
+}
+.ot-hmi-shell header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: #202f34;
+  border-bottom: 1px solid #5a6669;
+}
+.ot-hmi-shell header > div {
+  display: flex;
+  gap: 9px;
+  align-items: baseline;
+}
+.ot-manufacturer {
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+.ot-hmi-shell header strong {
+  color: var(--ot-accent);
+  font-size: 16px;
+  font-weight: 400;
+}
+.ot-hmi-shell header p {
+  margin: 0;
+  text-align: right;
+  font:
+    11px/1.8 Consolas,
+    monospace;
+  letter-spacing: 0.07em;
+}
+.ot-hmi-shell header small {
+  display: block;
+  color: var(--ot-muted);
+  font-size: 9px;
+}
+.ot-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  font:
+    10px/1.5 Consolas,
+    monospace;
+  background: #0f1f23;
+  color: var(--ot-muted);
+}
+.ot-status-bar > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.ot-connection {
+  width: 5px;
+  height: 5px;
+  background: #74c8a0;
+  border-radius: 50%;
+}
+.ot-hmi-shell nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+  padding: 6px;
+  border-bottom: 1px solid var(--ot-line);
+}
+.ot-hmi-shell nav button {
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  flex-direction: column;
+  font-size: 11px;
+  gap: 6px;
+}
+.ot-hmi-shell nav button[aria-pressed="true"] {
+  background: #33484c;
+  color: var(--ot-accent);
+}
+.ot-hmi-body {
+  padding: 22px;
+  min-height: 300px;
+}
+.ot-hmi-body h1 {
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 0 0 8px;
+  letter-spacing: -0.025em;
+}
+.ot-process-title > span {
+  color: var(--ot-muted);
+  font:
+    9px Consolas,
+    monospace;
+  letter-spacing: 0.1em;
+}
+.ot-hmi-body h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+.ot-hmi-body > p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--ot-muted);
+}
+.ot-flow-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+  color: #bdc9c7;
+}
+.ot-flow-diagram > div:not(.ot-fan-symbol) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font:
+    8px Consolas,
+    monospace;
+  letter-spacing: 0.1em;
+}
+.ot-flow-diagram > div:last-child {
+  text-align: right;
+}
+.ot-flow-diagram i {
+  display: block;
+  height: 18px;
+  background: repeating-linear-gradient(
+    90deg,
+    #76949360 0 10px,
+    #76949320 10px 20px
+  );
+  border-block: 1px solid #829d9c;
+}
+.ot-fan-symbol {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border: 1px solid #698380;
+  border-radius: 50%;
+  background: #223b3e;
+}
+.ot-fan-symbol small {
+  position: absolute;
+  bottom: -16px;
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--ot-muted);
+}
+.ot-fan-symbol.is-running svg {
+  animation: ot-rotate 3s linear infinite;
+}
+.ot-experience.is-inactive .ot-fan-symbol svg {
+  animation-play-state: paused;
+}
+@keyframes ot-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.ot-measurements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 28px 0 18px;
+}
+.ot-measurements > div {
+  border-top: 1px solid var(--ot-line);
+  padding-top: 13px;
+}
+.ot-measurements span {
+  display: block;
+  color: var(--ot-muted);
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.ot-measurements strong {
+  font:
+    35px/1.1 Consolas,
+    monospace;
+  letter-spacing: -0.05em;
+}
+.ot-measurements small {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 6px;
+  color: var(--ot-muted);
+  letter-spacing: 0;
+}
+.ot-alarm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #203837;
+  border: 1px solid #43665b;
+  border-radius: 4px;
+  padding: 12px;
+}
+.ot-alarm.is-active {
+  background: #3c2d28;
+  border-color: #885d43;
+}
+.ot-alarm strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.ot-alarm small {
+  display: block;
+  color: var(--ot-muted);
+  font-size: 10px;
+  margin-top: 6px;
+}
+.ot-beacon {
+  width: 8px;
+  height: 24px;
+  border-radius: 4px;
+  background: #74bb91;
+  flex: none;
+}
+.ot-beacon.is-red {
+  background: #e2946e;
+}
+.ot-beacon.is-blue {
+  background: #80bded;
+}
+.ot-circuit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  font-size: 11px;
+  color: var(--ot-muted);
+}
+.ot-circuit strong {
+  margin-left: auto;
+  color: var(--ot-ink);
+  font:
+    10px Consolas,
+    monospace;
+}
+.ot-hmi-body form {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+.ot-hmi-body label {
+  display: grid;
+  gap: 8px;
+  font-size: 12px;
+}
+.ot-hmi-body :is(input, textarea) {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #5d7276;
+  border-radius: 4px;
+  background: #0d1c21;
+  color: var(--ot-ink);
+  padding: 11px;
+  font:
+    12px/1.6 Consolas,
+    monospace;
+}
+.ot-hmi-body input {
+  min-height: 44px;
+}
+.ot-hmi-body textarea {
+  resize: vertical;
+  min-height: 125px;
+}
+.ot-request-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.ot-request-actions button {
+  font-size: 12px;
+}
+.ot-request-actions button:last-child {
+  background: var(--ot-accent);
+  color: #282a25;
+  border-color: transparent;
+}
+.ot-hmi-body .ot-reset {
+  background: transparent;
+  margin-top: 15px;
+  font-size: 11px;
+  color: var(--ot-muted);
+}
+.ot-control-buttons {
+  display: grid;
+  gap: 10px;
+}
+.ot-access-note {
+  color: #a9d5bb !important;
+}
+.ot-history {
+  padding: 0;
+  margin: 18px 0;
+  list-style: none;
+}
+.ot-history li {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid var(--ot-line);
+  padding: 13px 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.ot-history span {
+  color: var(--ot-accent);
+  font-family: Consolas, monospace;
+}
+.ot-response {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ot-line);
+}
+.ot-response h3 {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--ot-muted);
+  margin: 0 0 12px;
+}
+.ot-response pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+  font:
+    11px/1.65 Consolas,
+    monospace;
+  margin: 0 0 13px;
+}
+.ot-response button {
+  font-size: 11px;
+}
+.ot-response .kit-copy-control {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ot-response .kit-copy-status {
+  font-size: 10px;
+  color: var(--ot-muted);
+}
+.ot-error {
+  border-left: 2px solid #edb46c;
+  background: #382d27;
+  padding: 11px;
+  color: #ffce9e;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.ot-hmi-shell footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--ot-line);
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--ot-muted);
+}
+.ot-experience .ot-open-computer {
+  width: 100%;
+  margin-top: 14px;
+  background: #172b31dd;
+  font-size: 12px;
+}
+.ot-screen-launch {
+  position: absolute;
+  right: 30px;
+  bottom: 125px;
+  z-index: 4;
+  min-height: 46px;
+  padding: 12px 18px;
+  background: #203e44e8;
+  border: 1px solid #efb464;
+  border-radius: 6px;
+  color: #f2e4cf;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.ot-experience.is-web {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  background: #132328;
+  padding: 20px;
+}
+.ot-experience.is-web > .ot-hmi-shell,
+.ot-experience.is-web > .ot-caption {
+  max-width: 620px;
+  margin-inline: auto;
+}
+@media (max-width: 760px) {
+  .ot-overlay {
+    inset: 90px 10px 99px;
+    width: auto;
+  }
+  .ot-experience {
+    padding: 0 0 12px;
+  }
+  .ot-hmi-shell {
+    border-width: 5px;
+  }
+  .ot-hmi-body {
+    padding: 18px;
+  }
+  .ot-hmi-shell header {
+    padding: 18px;
+  }
+  .ot-status-bar {
+    padding: 10px 15px;
+    font-size: 9px;
+  }
+  .ot-measurements strong {
+    font-size: 30px;
+  }
+  .ot-caption {
+    font-size: 9px;
+  }
+  .ot-hmi-shell footer {
+    padding: 12px 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ot-fan-symbol.is-running svg {
+    animation: none;
+  }
+}

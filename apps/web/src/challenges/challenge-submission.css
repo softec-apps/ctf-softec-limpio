@@ -1,0 +1,110 @@
+.storybook-submission {
+  flex-shrink: 0;
+  padding: 14px 20px;
+  background: #f4e8cd;
+  border-top: 1px solid #c7b38d;
+  color: #302a20;
+}
+.storybook-submission-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+.storybook-submission label {
+  display: grid;
+  gap: 6px;
+  color: #59432f;
+  font:
+    13px Arial,
+    sans-serif;
+}
+.storybook-submission input {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  background: #fff9ea;
+  color: #302a20;
+  border: 1px solid #9e8159;
+  border-radius: 4px;
+  padding: 10px 12px;
+  font:
+    14px "Courier New",
+    monospace;
+}
+.storybook-submission input::placeholder {
+  color: #76654d;
+}
+.storybook-submission button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border: 1px solid #59432f;
+  border-radius: 4px;
+  background: #59432f;
+  color: #fff9ea;
+  padding: 10px 16px;
+  font:
+    13px Arial,
+    sans-serif;
+}
+.storybook-submission button:hover:not(:disabled) {
+  background: #71563b;
+}
+.storybook-submission :is(input, button):focus-visible {
+  outline: 3px solid #996124;
+  outline-offset: 2px;
+}
+.storybook-submission-feedback {
+  margin: 10px 0 0;
+  font:
+    13px/1.5 Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.storybook-submission-feedback.is-correct {
+  color: #28513b;
+}
+.storybook-submission-feedback.is-error {
+  color: #8e3024;
+}
+@media (max-width: 450px) {
+  .storybook-submission {
+    padding: 12px;
+  }
+  .storybook-submission-fields {
+    gap: 8px;
+  }
+  .storybook-submission button {
+    padding: 10px;
+  }
+}
+.storybook-solved {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #28513b;
+}
+.storybook-solved > div {
+  display: grid;
+  gap: 5px;
+}
+.storybook-solved strong {
+  font:
+    600 14px Arial,
+    sans-serif;
+}
+.storybook-solved span {
+  font:
+    13px Arial,
+    sans-serif;
+}
+.storybook-submission .flag-input {
+  --flag-input-bg: #fff9ea;
+  --flag-input-text: #302a20;
+  --flag-input-border: #9e8159;
+  --flag-input-marker: #76654d;
+  --flag-input-focus: #996124;
+}

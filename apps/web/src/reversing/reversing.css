@@ -1,0 +1,77 @@
+.reverse-tabs,
+.reverse-segments {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.reverse-tool .reverse-tabs {
+  flex-direction: row;
+}
+.reverse-tool .reverse-tabs button {
+  width: auto;
+  flex: 1;
+  min-width: 86px;
+  min-height: 44px;
+}
+.reverse-tool .reverse-tabs button[aria-pressed="true"],
+.reverse-tool .reverse-tabs button[aria-pressed="true"]:hover {
+  color: #fff;
+  background: #285577;
+  border-color: #285577;
+}
+.reverse-code {
+  background: #142330;
+  color: #cde2ef;
+  padding: 16px;
+  border-radius: 5px;
+  max-height: 380px;
+  overflow: auto;
+  white-space: pre !important;
+  font: 12px/1.65 monospace !important;
+}
+.reverse-memory {
+  white-space: nowrap;
+  min-width: 650px;
+  width: 100%;
+  font: 12px/1.6 monospace;
+  border-collapse: collapse;
+}
+.reverse-memory td,
+.reverse-memory th {
+  padding: 2px 10px;
+  text-align: left;
+}
+.reverse-memory th {
+  color: #8fb6cb;
+}
+.reverse-memory .is-changed {
+  background: #635526;
+  color: #fff3bf;
+}
+.reverse-run-status {
+  padding: 12px;
+  border: 1px solid #91b2c5;
+  border-radius: 5px;
+  background: #e7f1f7;
+}
+.reverse-tool > label input,
+.reverse-tool form input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+}
+.reverse-help dd {
+  line-height: 1.65;
+}
+.reverse-help dt {
+  margin-top: 12px;
+}
+.reverse-tool {
+  scroll-padding: 14px;
+}
+.reverse-tool pre:focus-visible {
+  outline: 2px solid #176d97;
+  outline-offset: 2px;
+}

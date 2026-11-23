@@ -1,0 +1,59 @@
+.challenge-pages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-block: 20px 0;
+}
+.challenge-pages > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+}
+.challenge-pages > label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+.challenge-pages select {
+  min-width: 90px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+.challenge-pages :is(button, select):focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+}
+.challenge-pages > button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+@container (max-width: 460px) {
+  .challenge-pages > button > span {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .challenge-pages > button > span {
+    display: none;
+  }
+}

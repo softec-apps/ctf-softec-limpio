@@ -1,0 +1,1596 @@
+.workstation-dialog {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #e8eaf0;
+  background: #10151e;
+  font-family: "DM Sans", sans-serif;
+}
+.workstation-dialog::backdrop {
+  background: #070e17;
+}
+.linux-desktop {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  --os-blue: #3889e8;
+  --os-border: #454b59;
+  --os-muted: #b6bcc9;
+  --os-panel: #252936;
+  --os-text: #eef0f5;
+}
+.linux-desktop button {
+  font-family: inherit;
+}
+.linux-panel {
+  height: 35px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #191e2b;
+  box-shadow: 0 2px 9px #0005;
+  z-index: 10000;
+  font-size: 12px;
+  border-bottom: 1px solid #384052;
+  padding: 0 9px 0 3px;
+}
+.panel-apps,
+.panel-indicators {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 3px;
+}
+.panel-indicators {
+  gap: 15px;
+}
+.panel-apps > button,
+.panel-exit {
+  border: 0;
+  background: transparent;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d8dce5;
+}
+.applications-button {
+  gap: 10px;
+  padding: 0 11px 0 5px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.seven-mark {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1;
+  font-style: italic;
+  color: #68b2fb;
+}
+.applications-button:hover,
+.applications-button.is-open,
+.panel-launcher:hover,
+.panel-exit:hover {
+  background: #363d4f;
+}
+.panel-divider {
+  height: 19px;
+  width: 1px;
+  background: #495062;
+  margin: 0 5px;
+}
+.panel-launcher {
+  width: 32px;
+}
+.panel-launcher:nth-of-type(3) {
+  color: #7ab2ec;
+}
+.workspace-index {
+  margin-left: 14px;
+  height: 25px;
+  min-width: 30px;
+  display: grid;
+  place-items: center;
+  background: #386ba8;
+  border-radius: 2px;
+  border-bottom: 2px solid #92c5ff;
+}
+.desktop-panel-title {
+  font-size: 11px;
+  color: #c4cbd6;
+  margin-left: 18px;
+}
+.panel-indicators > svg {
+  color: #d1d6e0;
+}
+.panel-indicators time {
+  font-size: 12px;
+  min-width: 35px;
+  font-variant-numeric: tabular-nums;
+}
+.panel-exit {
+  gap: 8px;
+  padding: 0 9px;
+  font-size: 11px;
+  margin-left: 0 !important;
+}
+.desktop-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #112b4c;
+}
+.desktop-wallpaper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.desktop-wallpaper > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.desktop-wordmark {
+  position: absolute;
+  left: 58%;
+  top: 64%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.desktop-wordmark strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(23px, 3.7vw, 57px);
+  letter-spacing: 0.13em;
+  font-weight: 600;
+  color: #b8dbf5;
+  text-shadow: 0 4px 25px #001b3e;
+}
+.desktop-wordmark > span {
+  font-size: 11px;
+  letter-spacing: 0.19em;
+  color: #98b9d8;
+}
+.desktop-watermark {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  color: #8ca6c4;
+  font-size: 11px;
+}
+.desktop-shortcuts {
+  position: absolute;
+  top: 25px;
+  left: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 96px;
+}
+.desktop-shortcut {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 4px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #f0f5fb;
+  min-height: 91px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px #0009;
+}
+.desktop-shortcut:hover,
+.desktop-shortcut:focus-visible {
+  background: #a3c5f226;
+  border-color: #91b5e766;
+}
+.desktop-shortcut > span:first-child {
+  width: 52px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #03152a55;
+  border: 1px solid #ffffff25;
+  background: #2a303d;
+}
+.shortcut-files > span:first-child {
+  background: linear-gradient(#81baff, #3b7bbf);
+  color: #e2f1ff;
+}
+.shortcut-terminal > span:first-child {
+  background: linear-gradient(#373e4a, #171d29);
+  color: #d7e0eb;
+}
+.shortcut-browser > span:first-child {
+  background: linear-gradient(135deg, #407bd8, #294594);
+  color: #bce7ff;
+}
+.shortcut-mission > span:first-child {
+  background: linear-gradient(#427cb5, #2a4676);
+  color: #f3d8a2;
+}
+.desktop-lab-badge {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 1px solid #7da5cc44;
+  border-radius: 4px;
+  color: #bad1e7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  font-size: 10px;
+  pointer-events: none;
+}
+.linux-window {
+  position: absolute;
+  left: var(--window-x);
+  top: var(--window-y);
+  width: 740px;
+  height: 450px;
+  min-width: 340px;
+  min-height: 260px;
+  max-width: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  background: #292d38;
+  border: 1px solid #4a5162;
+  border-radius: 5px;
+  box-shadow:
+    0 18px 60px #0007,
+    0 2px 8px #0005;
+  overflow: hidden;
+  resize: both;
+  color: #e8eaf0;
+}
+.linux-window.is-focused {
+  border-color: #65758b;
+  box-shadow:
+    0 24px 65px #0009,
+    0 2px 10px #0005;
+}
+.linux-window.is-minimized {
+  display: none;
+}
+.linux-window.is-maximized {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 0;
+  border: 0;
+  resize: none;
+}
+.linux-titlebar {
+  height: 35px;
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #292e3c;
+  border-bottom: 1px solid #151b27;
+  user-select: none;
+  touch-action: none;
+  cursor: move;
+  padding-left: 11px;
+}
+.is-focused .linux-titlebar {
+  background: #343c4f;
+}
+.window-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.window-title > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.window-title > svg {
+  color: #a4bedf;
+}
+.window-buttons {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  gap: 2px;
+}
+.window-buttons button {
+  border: 0;
+  background: transparent;
+  width: 32px;
+  height: 28px;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  color: #c9d0dc;
+  padding: 0;
+}
+.window-buttons button:hover {
+  background: #56637c;
+  color: white;
+}
+.window-buttons .window-close {
+  background: #2e75c7;
+  color: white;
+  margin-left: 4px;
+  width: 27px;
+  height: 23px;
+}
+.window-buttons .window-close:hover {
+  background: #dc5764;
+}
+.terminal-menubar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 12px;
+  background: #252a36;
+  border-bottom: 1px solid #414754;
+  font-size: 11px;
+  min-height: 30px;
+  color: #c7ccd7;
+}
+.terminal-menubar > span {
+  margin-right: auto;
+}
+.terminal-menubar button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: 0;
+  padding: 2px;
+  color: #c7ccd7;
+  font-size: 11px;
+  min-height: 22px;
+}
+.terminal-menubar button:hover {
+  color: #8bc4ff;
+}
+.linux-window .terminal {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: #171b25;
+  padding: 13px 11px 7px;
+  overflow: hidden;
+}
+.window-loading {
+  padding: 20px;
+  color: #b6bcc9;
+  font-size: 13px;
+}
+.file-manager {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: #292d38;
+}
+.file-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: #2c313d;
+  border-bottom: 1px solid #151b25;
+}
+.file-toolbar > button {
+  border: 1px solid transparent;
+  background: transparent;
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border-radius: 3px;
+  color: #c5ccda;
+}
+.file-toolbar > button:hover {
+  background: #3c4353;
+  border-color: #566076;
+}
+.file-toolbar form {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #1c222d;
+  border: 1px solid #4a5161;
+  padding-left: 9px;
+  border-radius: 3px;
+}
+.file-toolbar form > svg {
+  color: #7caee9;
+}
+.file-toolbar input {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  min-height: 30px;
+  padding: 6px 8px 6px 0;
+  font-size: 11px;
+  color: #d9dfe9;
+}
+.file-manager-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.file-places {
+  width: 155px;
+  min-width: 155px;
+  background: #222733;
+  border-right: 1px solid #171d28;
+  padding: 13px 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #c7cfdd;
+}
+.file-places > span {
+  font-size: 10px;
+  color: #b9c1d0;
+  margin: 0 6px 6px;
+  font-weight: 600;
+}
+.file-places button,
+.file-places > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 7px;
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+  font-size: 11px;
+  text-align: left;
+  color: #d2d9e5;
+}
+.file-places button:hover {
+  background: #343c4b;
+}
+.file-places button.selected {
+  background: #31649a;
+  color: white;
+}
+.file-places .file-device-label {
+  margin-top: 23px;
+}
+.file-grid {
+  flex: 1;
+  padding: 22px 18px;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  overflow: auto;
+  background: #292e39;
+}
+.file-entry {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 9px 6px;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  color: #e2e7ef;
+  font-size: 11px;
+  min-height: 105px;
+  overflow-wrap: anywhere;
+}
+.file-entry:hover {
+  background: #3d5674;
+  border-color: #5b86bb;
+}
+.folder-icon {
+  color: #73b5fb;
+  fill: #3f88d0;
+}
+.document-icon {
+  color: #d9dfeb;
+  fill: #384352;
+}
+.file-status,
+.editor-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 27px;
+  background: #242a35;
+  border-top: 1px solid #161e2b;
+  padding: 6px 12px;
+  font-size: 10px;
+  color: #bdc6d4;
+}
+.file-status span:last-child {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.file-loading,
+.file-error {
+  font-size: 12px;
+  color: #c9d0de;
+  padding: 6px;
+}
+.file-error button {
+  display: block;
+  margin-top: 15px;
+  background: #3a6aa1;
+  border: 1px solid #5c8bbf;
+  border-radius: 4px;
+  padding: 8px;
+  color: white;
+}
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  font-size: 11px;
+  color: #d5dce7;
+  border-bottom: 1px solid #404959;
+  background: #282f3c;
+}
+.editor-toolbar > span {
+  margin-left: auto;
+  font-size: 10px;
+  color: #b8c1d0;
+}
+.evidence-document {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 25px;
+  margin: 0;
+  background: #1e2531;
+  color: #e0e6ef;
+  font:
+    13px/1.9 Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.window-editor {
+  width: 630px;
+  height: 420px;
+}
+.window-files {
+  width: 690px;
+  height: 430px;
+}
+.window-mission {
+  width: 540px;
+  height: 580px;
+}
+.window-browser {
+  width: 800px;
+  height: 570px;
+}
+.desktop-mission {
+  overflow: auto;
+  padding: 28px;
+  background: #242b38;
+  flex: 1;
+  min-height: 0;
+}
+.mission-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.mission-app-badge {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a2c9f4;
+}
+.mission-chip {
+  background: #324766;
+  border: 1px solid #4c6b92;
+  color: #c5d9f2;
+  font-size: 10px;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.mission-chip.complete {
+  background: #285043;
+  color: #b9e8d1;
+  border-color: #4b836d;
+}
+.desktop-mission h2 {
+  font-size: 28px;
+  color: #eef2fa;
+  margin-bottom: 12px;
+}
+.desktop-mission > p {
+  font-size: 13px;
+  color: #c1c9d7;
+}
+.mission-brief {
+  display: flex;
+  gap: 25px;
+  border-top: 1px solid #465064;
+  border-bottom: 1px solid #465064;
+  padding: 17px 0;
+  margin: 22px 0;
+}
+.mission-brief > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mission-brief span {
+  font-size: 10px;
+  color: #aeb9cb;
+}
+.mission-brief strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: #e0e9f7;
+}
+.mission-app-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.mission-app-actions button {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  justify-content: center;
+  background: #333f52;
+  color: #dbe8f9;
+  border: 1px solid #52627b;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 11px;
+  flex: 1;
+  min-height: 39px;
+}
+.mission-app-actions button:hover {
+  background: #3d5270;
+}
+.desktop-mission form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.desktop-mission label {
+  color: #d6dfed;
+  font-size: 12px;
+}
+.desktop-mission input {
+  font-family: Consolas, monospace;
+  background: #1b2330;
+  border-color: #55637b;
+  border-radius: 4px;
+  color: #e4ebf7;
+}
+.desktop-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #6b9ee1;
+  border-radius: 4px;
+  background: #316fb7;
+  color: white;
+  min-height: 42px;
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.desktop-submit:hover:not(:disabled) {
+  background: #3b80cb;
+}
+.desktop-feedback {
+  font-size: 12px !important;
+  color: #e0c797 !important;
+  border: 1px solid #7a6546;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 16px 0 0 !important;
+}
+.desktop-feedback.success {
+  color: #c8ebd9 !important;
+  background: #285043;
+  border-color: #4b836d;
+}
+.intranet {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: #eef2f6;
+}
+.browser-chrome {
+  background: #252c39;
+  padding: 0 11px 8px;
+}
+.browser-tab {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #3c4658;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 12px;
+  font-size: 10px;
+  width: 210px;
+}
+.browser-tab > svg:last-child {
+  margin-left: auto;
+  color: #a9b5c8;
+}
+.browser-address {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 12px;
+  background: #19212e;
+  border: 1px solid #47546a;
+  border-radius: 4px;
+  color: #c4cedf;
+  font-size: 11px;
+  margin-top: 6px;
+}
+.browser-address > span {
+  flex: 1;
+}
+.browser-address svg {
+  color: #9cc6a9;
+}
+.intranet-body {
+  flex: 1;
+  overflow: auto;
+  background: #eef2f6;
+  color: #24334b;
+}
+.intranet-body > header {
+  padding: 22px 30px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d1d9e3;
+  font-size: 10px;
+  color: #61718a;
+}
+.intranet-body > header strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #153660;
+}
+.intranet-body > header strong span {
+  font-size: 12px;
+  color: #567290;
+  font-weight: 400;
+}
+.intranet-body > nav {
+  display: flex;
+  flex-direction: row;
+  padding: 0 25px;
+  gap: 18px;
+  border-bottom: 1px solid #d1d9e3;
+}
+.intranet-body > nav > button {
+  display: block;
+  flex: none;
+  min-height: 42px;
+  color: #536782;
+  border: 0;
+  border-radius: 0;
+  padding: 10px 5px;
+  font-size: 11px;
+  background: transparent;
+}
+.intranet-body > nav > button:hover {
+  color: #245daf;
+  background: transparent;
+}
+.intranet-body > nav > button[aria-current="page"] {
+  border-bottom: 2px solid #3477c6;
+  color: #20559c;
+}
+.intranet-body > article {
+  padding: 30px 35px;
+  max-width: 720px;
+}
+.intranet-kicker {
+  font-size: 10px;
+  color: #4e6b8a;
+}
+.intranet-body h1 {
+  font-size: 36px;
+  color: #16385c;
+  margin: 13px 0 17px;
+}
+.intranet-body p {
+  color: #54677f;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.intranet-body .desktop-submit {
+  display: inline-flex;
+  margin-top: 8px;
+  min-height: 39px;
+  font-size: 11px;
+}
+.turn-arrow {
+  transform: rotate(180deg);
+}
+.intranet-notice {
+  padding: 19px;
+  display: flex;
+  gap: 15px;
+  background: #e1e9f2;
+  border-left: 3px solid #477fbe;
+  margin-top: 27px;
+}
+.intranet-notice svg {
+  color: #4d7cae;
+  margin-top: 2px;
+}
+.intranet-notice strong {
+  font-size: 12px;
+  color: #294e75;
+}
+.intranet-notice p {
+  font-size: 11px;
+  margin: 7px 0 0;
+}
+.intranet-body > footer {
+  border-top: 1px solid #d1d9e3;
+  padding: 15px 30px;
+  font-size: 10px;
+  color: #5b6f86;
+}
+.intranet-body dl {
+  padding: 15px 0;
+  border-top: 1px solid #d1d9e3;
+  border-bottom: 1px solid #d1d9e3;
+}
+.intranet-body dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 0;
+  font-size: 11px;
+}
+.intranet-body dt {
+  color: #5b6f86;
+}
+.intranet-body dd {
+  margin: 0;
+  color: #253f60;
+  font-family: Consolas, monospace;
+}
+.command-reference {
+  display: grid;
+  grid-template-columns: 135px 1fr;
+  gap: 12px 20px;
+  align-items: center;
+  padding: 20px;
+  background: #e1e8f1;
+  margin: 24px 0;
+}
+.command-reference code {
+  font:
+    11px Consolas,
+    monospace;
+  color: #245c9f;
+}
+.command-reference span {
+  font-size: 11px;
+  color: #536b86;
+}
+.linux-taskbar {
+  height: 39px;
+  flex-shrink: 0;
+  background: #1b2230;
+  border-top: 1px solid #414b60;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 3px 10px 3px 4px;
+  z-index: 10000;
+  font-size: 11px;
+}
+.linux-taskbar > button,
+.taskbar-windows button {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  color: #c4cede;
+  min-height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+.linux-taskbar > button:hover,
+.taskbar-windows button:hover {
+  background: #34425a;
+}
+.linux-taskbar .show-desktop {
+  padding: 6px 9px;
+  margin-right: 1px;
+  border-right: 1px solid #45516a;
+  border-radius: 0;
+}
+.taskbar-windows {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.taskbar-windows button {
+  min-width: 115px;
+  justify-content: start;
+  max-width: 190px;
+}
+.taskbar-windows button > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.taskbar-windows button.active {
+  background: #354c6b;
+  border-color: #5a7ca7;
+  border-bottom: 2px solid #72b4fd;
+}
+.taskbar-windows svg {
+  color: #9cc9ff;
+}
+.linux-taskbar .taskbar-mission {
+  color: #bcd8f6;
+  font-size: 10px;
+  white-space: nowrap;
+  border-left: 1px solid #45516a;
+  border-radius: 0;
+  margin-left: auto;
+}
+.session-user {
+  font-family: Consolas, monospace;
+  color: #a4b3c9;
+  font-size: 10px;
+  white-space: nowrap;
+  padding-left: 9px;
+}
+.applications-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  background: #252e3d;
+  border: 1px solid #56657c;
+  border-radius: 0 0 6px 0;
+  box-shadow: 10px 15px 45px #0007;
+  padding: 0 7px;
+  z-index: 9999;
+  overflow: hidden;
+}
+.applications-menu > header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #475670;
+  margin: 0 7px 7px;
+  padding: 20px 8px;
+}
+.applications-menu > header > .seven-mark {
+  font-size: 38px;
+}
+.applications-menu > header strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+.applications-menu > header div > span {
+  display: block;
+  font-size: 10px;
+  color: #b0bfd4;
+  margin-top: 5px;
+}
+.applications-menu > button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+  color: #b5cde9;
+  text-align: left;
+}
+.applications-menu > button:hover {
+  background: #365477;
+}
+.applications-menu > button > span {
+  flex: 1;
+}
+.applications-menu strong {
+  font-size: 12px;
+  font-weight: 500;
+  color: #eef2f7;
+}
+.applications-menu small {
+  display: block;
+  font-size: 10px;
+  color: #b9c6d8;
+  margin-top: 3px;
+}
+.applications-menu > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 13px;
+  margin-top: 8px;
+  border-top: 1px solid #475670;
+  font-size: 11px;
+  color: #d7e5f4;
+}
+.applications-menu > footer > span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.applications-menu > footer button {
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+}
+.applications-menu > footer button:hover {
+  background: #4c5065;
+}
+.linux-desktop button:focus-visible,
+.linux-desktop input:focus-visible,
+.linux-desktop pre:focus-visible {
+  outline: 2px solid #9bcaff;
+  outline-offset: 2px;
+}
+.intranet-body button:focus-visible {
+  outline-color: #185db5;
+}
+.file-toolbar input:focus-visible {
+  outline-offset: 0;
+}
+.linux-desktop .is-minimized .terminal {
+  visibility: hidden;
+}
+@media (max-width: 1100px) {
+  .linux-window {
+    width: 670px;
+  }
+  .window-browser {
+    width: 730px;
+  }
+  .window-mission {
+    width: 510px;
+  }
+  .desktop-panel-title {
+    display: none;
+  }
+  .desktop-wordmark {
+    left: 50%;
+  }
+  .session-user {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .linux-panel {
+    height: 43px;
+    padding-right: 5px;
+  }
+  .panel-apps > button {
+    height: 40px;
+  }
+  .panel-apps {
+    gap: 0;
+  }
+  .applications-button {
+    font-size: 11px;
+    gap: 6px;
+    padding-right: 6px;
+  }
+  .panel-launcher {
+    width: 31px;
+  }
+  .panel-indicators {
+    gap: 9px;
+  }
+  .panel-indicators > svg {
+    display: none;
+  }
+  .panel-exit {
+    min-width: 35px;
+    height: 40px;
+  }
+  .panel-exit span {
+    display: none;
+  }
+  .workspace-index {
+    margin-left: 4px;
+    min-width: 23px;
+  }
+  .panel-divider {
+    margin: 0 3px;
+  }
+  .desktop-shortcuts {
+    left: 11px;
+    top: 15px;
+    gap: 13px;
+    width: 83px;
+  }
+  .desktop-shortcut {
+    font-size: 10px;
+    min-height: 86px;
+  }
+  .desktop-shortcut > span:first-child {
+    width: 45px;
+    height: 44px;
+  }
+  .desktop-wordmark {
+    left: auto;
+    right: 7%;
+    top: 65%;
+    align-items: end;
+  }
+  .desktop-wordmark strong {
+    font-size: 26px;
+    letter-spacing: 0.08em;
+  }
+  .desktop-wordmark > span {
+    font-size: 8px;
+    letter-spacing: 0.09em;
+  }
+  .desktop-watermark {
+    font-size: 9px;
+    right: 21px;
+    bottom: 22px;
+  }
+  .desktop-wallpaper > svg {
+    width: 130%;
+    left: -5%;
+  }
+  .linux-window:not(.is-minimized) {
+    left: 5px;
+    top: 8px;
+    width: calc(100% - 10px);
+    height: calc(100% - 16px);
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 16px);
+    min-width: 0;
+    min-height: 0;
+    resize: none;
+  }
+  .linux-window.is-maximized:not(.is-minimized) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .linux-titlebar {
+    min-height: 43px;
+    height: 43px;
+    padding-left: 9px;
+  }
+  .window-buttons {
+    gap: 1px;
+  }
+  .window-buttons button {
+    width: 34px;
+    height: 35px;
+  }
+  .window-buttons .window-close {
+    height: 29px;
+    width: 30px;
+  }
+  .window-title {
+    font-size: 10px;
+    gap: 6px;
+  }
+  .terminal-menubar {
+    font-size: 10px;
+    gap: 9px;
+    padding-left: 9px;
+  }
+  .terminal-menubar button {
+    font-size: 10px;
+    min-height: 31px;
+  }
+  .terminal-menubar > span {
+    font-size: 9px;
+  }
+  .linux-window .terminal {
+    padding: 11px 6px 6px;
+  }
+  .file-places {
+    width: 115px;
+    min-width: 115px;
+    padding: 13px 4px;
+  }
+  .file-places button,
+  .file-places > div {
+    font-size: 10px;
+    gap: 5px;
+    padding: 8px 4px;
+  }
+  .file-places svg {
+    width: 14px;
+  }
+  .file-grid {
+    padding: 15px 8px;
+    gap: 8px;
+  }
+  .file-entry {
+    width: 90px;
+    font-size: 10px;
+  }
+  .file-status {
+    font-size: 9px;
+    padding: 7px 8px;
+  }
+  .file-status > span:last-child {
+    max-width: 190px;
+  }
+  .desktop-mission {
+    padding: 23px 19px;
+  }
+  .desktop-mission h2 {
+    font-size: 26px;
+  }
+  .mission-brief {
+    gap: 15px;
+  }
+  .mission-brief strong {
+    font-size: 11px;
+  }
+  .mission-app-actions {
+    gap: 8px;
+  }
+  .mission-app-actions button {
+    font-size: 10px;
+    padding: 9px 7px;
+  }
+  .mission-app-actions button > svg:last-child {
+    display: none;
+  }
+  .mission-app-header {
+    gap: 10px;
+  }
+  .mission-app-badge {
+    font-size: 10px;
+  }
+  .mission-chip {
+    font-size: 9px;
+  }
+  .linux-taskbar {
+    height: 43px;
+    gap: 3px;
+    padding-left: 1px;
+    padding-right: 4px;
+  }
+  .taskbar-windows {
+    gap: 2px;
+  }
+  .taskbar-windows button {
+    min-width: 44px;
+    max-width: 95px;
+    min-height: 35px;
+    padding: 5px 8px;
+    gap: 6px;
+    font-size: 10px;
+  }
+  .taskbar-windows button > span {
+    display: none;
+  }
+  .linux-taskbar .taskbar-mission {
+    padding: 6px;
+    min-height: 35px;
+  }
+  .linux-taskbar .taskbar-mission span {
+    font-size: 9px;
+  }
+  .linux-taskbar .show-desktop {
+    padding: 6px;
+  }
+  .desktop-lab-badge {
+    right: 12px;
+    top: 14px;
+    font-size: 9px;
+    gap: 6px;
+    padding: 6px;
+  }
+  .applications-menu {
+    width: 280px;
+  }
+  .intranet-body > header {
+    padding: 19px 17px;
+  }
+  .intranet-body > header > span {
+    display: none;
+  }
+  .intranet-body > nav {
+    padding: 0 13px;
+    gap: 15px;
+  }
+  .intranet-body > article {
+    padding: 26px 20px;
+  }
+  .intranet-body h1 {
+    font-size: 30px;
+  }
+  .intranet-body p {
+    font-size: 12px;
+  }
+  .command-reference {
+    padding: 16px 11px;
+    grid-template-columns: 100px 1fr;
+    gap: 15px 10px;
+  }
+  .command-reference code,
+  .command-reference span {
+    font-size: 10px;
+  }
+  .evidence-document {
+    padding: 20px 15px;
+    font-size: 12px;
+  }
+  .browser-address {
+    font-size: 10px;
+  }
+  .editor-toolbar {
+    padding: 12px;
+    font-size: 10px;
+  }
+}
+
+.panel-labeled {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.shortcut-ffuf > span:first-child {
+  background: linear-gradient(135deg, #226576, #413c79);
+}
+.desktop-shortcuts {
+  height: calc(100% - 50px);
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.desktop-shortcut {
+  width: 96px;
+  flex-shrink: 0;
+}
+
+.window-http,
+.window-evidence {
+  width: 880px;
+  height: 590px;
+}
+.window-transform,
+.window-json {
+  width: 750px;
+  height: 570px;
+}
+.window-compare {
+  width: 950px;
+  height: 610px;
+}
+/* XFCE-style cascading application menu. */
+.applications-menu {
+  width: 236px;
+  max-height: none;
+  overflow: visible;
+  padding: 4px;
+  border-radius: 2px;
+  background: #29313c;
+  box-shadow: 3px 5px 12px #0007;
+}
+.applications-menu > header {
+  padding: 10px 9px;
+  margin: 0 2px 4px;
+  gap: 11px;
+}
+.applications-menu > header > .seven-mark {
+  font-size: 26px;
+}
+.applications-menu > header strong {
+  font-size: 14px;
+}
+.application-group {
+  position: relative;
+}
+.applications-menu .application-category,
+.applications-submenu > button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 35px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #e5eaf0;
+  text-align: left;
+  font:
+    12px Arial,
+    sans-serif;
+}
+.application-category > span,
+.applications-submenu > button > span {
+  flex: 1;
+}
+.applications-menu .application-category:hover,
+.applications-menu .application-category[aria-expanded="true"],
+.applications-submenu > button:hover,
+.applications-submenu > button:focus-visible {
+  background: #3b6388;
+  border-color: #6485a4;
+}
+.applications-submenu {
+  position: absolute;
+  left: 100%;
+  top: -5px;
+  width: 250px;
+  padding: 4px;
+  background: #29313c;
+  border: 1px solid #56657c;
+  border-radius: 2px;
+  box-shadow: 3px 5px 12px #0007;
+}
+.applications-menu > footer {
+  margin-top: 5px;
+  padding: 5px 9px;
+}
+.applications-menu > footer button {
+  width: 28px;
+  height: 28px;
+}
+@media (max-width: 560px) {
+  .applications-menu {
+    width: min(260px, calc(100% - 12px));
+  }
+  .applications-submenu {
+    position: static;
+    width: auto;
+    margin: 2px 0 5px 17px;
+    box-shadow: none;
+    border-color: #46566b;
+  }
+}
+.browser-home {
+  flex: 1;
+  overflow: auto;
+  padding: 28px;
+  background: #edf2f8;
+  color: #20344e;
+}
+.browser-home h1 {
+  font-size: 25px;
+}
+.browser-home > div {
+  display: grid;
+  gap: 9px;
+  margin-top: 22px;
+}
+.browser-home button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  padding: 12px;
+  text-align: left;
+  background: white;
+  border: 1px solid #bdcede;
+  color: #254b70;
+  border-radius: 5px;
+}
+.shortcut-http > span:first-child,
+.shortcut-transform > span:first-child,
+.shortcut-evidence > span:first-child,
+.shortcut-compare > span:first-child,
+.shortcut-json > span:first-child {
+  background: #28566f;
+}
+
+.linux-panel .panel-labeled {
+  width: auto;
+  min-width: 44px;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.window-sql,
+.window-contracts,
+.window-memory,
+.window-reverse,
+.window-image,
+.window-audio,
+.window-hex {
+  width: 960px;
+  height: 650px;
+}
+.mission-solved {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-block: 20px;
+  padding: 18px;
+  border: 1px solid #8dbda4;
+  border-radius: 8px;
+  background: #e5f0e9;
+  color: #28513b;
+}
+.mission-solved > svg {
+  flex-shrink: 0;
+}
+.mission-solved strong {
+  font-size: 15px;
+}
+.mission-solved p {
+  margin: 6px 0 0;
+  font-size: 13px;
+}

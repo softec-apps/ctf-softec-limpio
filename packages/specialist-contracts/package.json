@@ -1,0 +1,7 @@
+{
+  "name": "@seventech/specialist-contracts",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

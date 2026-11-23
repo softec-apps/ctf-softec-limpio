@@ -1,0 +1,234 @@
+.media-tool {
+  height: 100%;
+  min-width: 0;
+  overflow: auto;
+  padding: 20px;
+  color: #253545;
+  background: #f3f5f7;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+.media-tool header h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.media-tool header p {
+  color: #526478;
+  margin: 0 0 18px;
+}
+.media-tool button,
+.media-tool select,
+.media-tool input {
+  font: inherit;
+  min-height: 34px;
+  border: 1px solid #aebdca;
+  border-radius: 5px;
+  background: #fff;
+  color: #20394c;
+  padding: 6px 10px;
+}
+.media-tool button {
+  cursor: pointer;
+}
+.media-tool button:hover:not(:disabled) {
+  background: #e4eef5;
+  border-color: #658ca8;
+}
+.media-tool button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.media-tool :focus-visible {
+  outline: 2px solid #176d97;
+  outline-offset: 2px;
+}
+.media-controls,
+.media-file-control > div,
+.media-inline-label {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.media-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.media-controls input {
+  width: 140px;
+  max-width: 100%;
+}
+.media-file-control > div {
+  align-items: center;
+}
+.media-file-control span,
+.media-file-info {
+  overflow-wrap: anywhere;
+  color: #526478;
+}
+.media-file-picker {
+  padding: 12px;
+  background: white;
+  border: 1px solid #bac8d3;
+  border-radius: 6px;
+}
+.media-picker-close {
+  float: right;
+  margin-bottom: 8px;
+}
+.media-image-stage {
+  background: repeating-conic-gradient(#e3e9ed 0% 25%, #f7f9fa 0% 50%) 50%/20px
+    20px;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #b6c5d0;
+  padding: 14px;
+  overflow: auto;
+}
+.media-image-stage canvas {
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+.media-tool details {
+  border-top: 1px solid #c9d3dc;
+  padding: 12px 0;
+}
+.media-tool summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.media-tool pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 12px/1.55 monospace;
+}
+.media-tool dl {
+  margin: 12px 0;
+}
+.media-tool dd {
+  margin: 6px 0 16px;
+}
+.media-tool dt {
+  font-weight: 600;
+}
+.media-tool textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 86px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #b2c3ce;
+  border-radius: 5px;
+  color: #20394c;
+  font: 13px/1.6 monospace;
+  resize: vertical;
+}
+.media-result {
+  margin: 16px 0;
+}
+.media-result > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.media-tool audio {
+  width: 100%;
+  max-width: 560px;
+}
+.media-audio-plot {
+  display: block;
+  width: 100%;
+  height: 140px;
+  border-radius: 4px;
+}
+.media-tool h3 {
+  font-size: 13px;
+  margin: 16px 0 8px;
+}
+.media-tool fieldset {
+  border: 1px solid #b8c7d3;
+  border-radius: 5px;
+  min-width: 0;
+  margin: 14px 0;
+}
+.media-tool legend {
+  padding: 0 6px;
+}
+.media-hex-scroll {
+  overflow: auto;
+  background: #142330;
+  color: #d8e8f3;
+  border-radius: 5px;
+}
+.media-hex-table {
+  font: 12px/1.6 monospace;
+  white-space: nowrap;
+  border-collapse: collapse;
+  min-width: 670px;
+  width: 100%;
+}
+.media-hex-table th,
+.media-hex-table td {
+  padding: 1px 12px;
+  text-align: left;
+}
+.media-hex-table th {
+  color: #8fb6cb;
+}
+.media-strings > div,
+.media-svg-layer,
+.media-zip-entry {
+  padding: 10px 0;
+  border-bottom: 1px solid #d2dce3;
+}
+.media-zip-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.media-tool [role="alert"] {
+  color: #a02c29;
+}
+.media-text-preview {
+  max-height: 260px;
+  overflow: auto;
+}
+.media-strings {
+  max-height: 350px;
+  overflow: auto;
+}
+.media-inline-label {
+  align-items: center;
+}
+.media-tool .kit-file-browser {
+  clear: both;
+}
+@media (max-width: 600px) {
+  .media-tool {
+    padding: 12px;
+  }
+  .media-controls {
+    align-items: stretch;
+  }
+  .media-controls label {
+    flex: 1;
+    min-width: 115px;
+  }
+  .media-controls button {
+    flex-basis: 100%;
+  }
+  .media-file-control > div {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .media-hex-table {
+    font-size: 11px;
+  }
+}

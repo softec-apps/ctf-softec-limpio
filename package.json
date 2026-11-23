@@ -1,0 +1,71 @@
+{
+  "name": "ctf-softec",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "node scripts/dev.mjs",
+    "stop": "node scripts/stop.mjs",
+    "db:start": "node scripts/database.mjs",
+    "db:migrate": "prisma migrate deploy --schema apps/api/prisma/schema.prisma",
+    "db:generate": "prisma generate --schema apps/api/prisma/schema.prisma",
+    "db:seed": "tsx apps/api/src/seed.ts",
+    "build": "npm run db:generate && npm run build --workspace apps/api && npm run build --workspace apps/web",
+    "test": "tsx --tsconfig apps/api/tsconfig.json --test tests/integration.test.ts",
+    "test:scene": "tsx --test tests/scene.test.ts",
+    "check": "npm run build && npm test && npm run test:scene && npm run test:tools && npm run test:network && npm run test:linux && npm run test:linux:api && npm run test:stego && npm run test:stego:api && npm run test:reverse && npm run test:reverse:api && npm run test:entrance && npm run test:entrance:api && npm run test:domain && npm run test:domain:api && npm run test:competition && npm run test:privileged && npm run test:scoring && npm run test:printer && npm run test:ot && npm run test:ranking && npm run test:files && npm run test:specialist && npm run test:advanced && npm run test:data-contracts && npm run test:auditorium && npm run test:registration && npm run test:categories && npm run test:enigma && npm run test:admin-users && npm run test:windows && npm run test:windows:api && npm run test:wireless && npm run test:wireless:api",
+    "test:network": "tsx --test tests/network-operations.test.ts",
+    "test:tools": "tsx --test tests/toolkit.test.ts",
+    "test:linux": "tsx --test tests/linux-network.test.ts",
+    "test:linux:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/linux-network-api.test.ts",
+    "test:stego": "tsx --test tests/stego.test.ts",
+    "test:stego:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/stego-api.test.ts",
+    "test:reverse": "tsx --test tests/reversing.test.ts",
+    "test:reverse:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/reversing-api.test.ts",
+    "test:entrance": "tsx --test tests/entrance.test.ts",
+    "test:entrance:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/entrance-api.test.ts",
+    "test:domain": "tsx --test tests/domain.test.ts",
+    "test:domain:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/domain-api.test.ts",
+    "test:competition": "tsx --tsconfig apps/api/tsconfig.json --test tests/competition-api.test.ts",
+    "test:privileged": "tsx --tsconfig apps/api/tsconfig.json --test tests/privileged.test.ts tests/privileged-api.test.ts",
+    "scores:recalculate": "node scripts/recalculate-scores.mjs",
+    "test:scoring": "tsx --tsconfig apps/api/tsconfig.json --test tests/scoring-api.test.ts",
+    "test:printer": "tsx --tsconfig apps/api/tsconfig.json --test tests/printer-api.test.ts",
+    "test:ot": "tsx --tsconfig apps/api/tsconfig.json --test tests/ot-api.test.ts",
+    "test:ranking": "tsx --test tests/ranking.test.ts",
+    "test:files": "tsx --tsconfig apps/api/tsconfig.json --test tests/file-forensics-api.test.ts",
+    "test:specialist": "tsx --tsconfig apps/api/tsconfig.json --test tests/specialist-api.test.ts",
+    "test:advanced": "tsx --tsconfig apps/api/tsconfig.json --test tests/advanced-api.test.ts",
+    "test:data-contracts": "tsx --tsconfig apps/api/tsconfig.json --test tests/data-contracts.test.ts",
+    "test:auditorium": "tsx --tsconfig apps/api/tsconfig.json --test tests/auditorium-api.test.ts tests/auditorium-display.test.ts",
+    "test:registration": "tsx --tsconfig apps/api/tsconfig.json --test tests/registration-api.test.ts",
+    "test:categories": "tsx --tsconfig apps/api/tsconfig.json --test tests/category-availability-api.test.ts",
+    "test:enigma": "tsx --tsconfig apps/api/tsconfig.json --test tests/enigma.test.ts",
+    "test:admin-users": "tsx --tsconfig apps/api/tsconfig.json --test tests/admin-users-api.test.ts",
+    "test:windows": "tsx --test tests/windows-lab.test.ts",
+    "test:windows:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/windows-lab-api.test.ts",
+    "test:wireless": "tsx --test tests/wireless.test.ts",
+    "test:wireless:api": "tsx --tsconfig apps/api/tsconfig.json --test tests/wireless-api.test.ts",
+    "start": "node --import tsx apps/api/dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "embedded-postgres": "18.6.0-beta.19",
+    "piexifjs": "^1.0.6",
+    "prettier": "^3.9.10",
+    "prisma": "7.10.1",
+    "qrcode": "^1.5.4",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

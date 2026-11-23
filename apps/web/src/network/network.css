@@ -1,0 +1,246 @@
+.window-packets {
+  width: 1020px;
+  height: 650px;
+}
+.packet-analyzer {
+  padding: 18px;
+  min-height: 0;
+}
+.packet-analyzer h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+}
+.packet-analyzer header p {
+  color: #536a84;
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+.packet-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0;
+}
+.packet-filters label {
+  font-size: 11px;
+}
+.packet-filters input,
+.packet-filters select {
+  min-width: 0;
+}
+.packet-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+.packet-actions button,
+.packet-transcript > button {
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid #8fa3bc;
+  border-radius: 4px;
+  background: #e2ebf5;
+  color: #1d3552;
+  font-size: 12px;
+}
+.packet-actions > span {
+  color: #536a84;
+  font-size: 12px;
+}
+.packet-table {
+  overflow: auto;
+  max-height: 270px;
+  border: 1px solid #a9b9ca;
+  background: white;
+}
+.packet-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.packet-table :is(th, td) {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid #d8e1eb;
+  white-space: nowrap;
+}
+.packet-table th {
+  position: sticky;
+  top: 0;
+  background: #dfe9f3;
+}
+.packet-table button {
+  background: transparent;
+  border: 0;
+  color: #1d598a;
+  cursor: pointer;
+  padding: 4px 7px;
+}
+.packet-table tr[aria-selected="true"] {
+  background: #d2e6fb;
+}
+.packet-detail pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 280px;
+  overflow: auto;
+  background: #172c43;
+  color: #dceafa;
+  padding: 14px;
+  font:
+    12px/1.6 Consolas,
+    monospace;
+}
+.packet-actions h3 {
+  margin: 0 auto 0 0;
+}
+.packet-transcript textarea {
+  min-height: 180px;
+}
+.rack-network-panel {
+  position: absolute;
+  z-index: 12;
+  top: 80px;
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(850px, calc(100% - 32px));
+  overflow: auto;
+  padding: 22px;
+  background: #202d32f5;
+  color: #dce7e9;
+  border: 1px solid #657f89;
+  box-shadow: 0 12px 40px #0007;
+}
+.rack-network-panel > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.rack-network-panel header span {
+  font-size: 11px;
+  color: #a5bec6;
+}
+.rack-network-panel h1 {
+  margin: 6px 0;
+  font-size: 26px;
+}
+.rack-network-panel button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid #66818c;
+  background: #304951;
+  color: #e2eeef;
+  border-radius: 3px;
+}
+.rack-case-list {
+  display: grid;
+  gap: 9px;
+}
+.rack-case-list button {
+  display: flex;
+  text-align: left;
+  padding: 15px;
+}
+.rack-case-list strong {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+.rack-case-list button > span {
+  font-size: 11px;
+  color: #b8cfd4;
+  min-width: 25px;
+}
+.rack-case-body {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+  font-size: 14px;
+  margin: 20px 0;
+}
+.rack-network-panel nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+}
+.rack-network-panel button:focus-visible {
+  outline: 2px solid #acd6e2;
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .packet-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .packet-analyzer {
+    padding: 12px;
+  }
+  .rack-network-panel {
+    padding: 14px;
+  }
+  .rack-network-panel h1 {
+    font-size: 22px;
+  }
+}
+.packet-protocol-tree {
+  border: 1px solid #c8d3e0;
+  background: #fdfefe;
+  color: #25344b;
+  font-size: 12px;
+  overflow: auto;
+}
+.packet-protocol-tree > details {
+  border-bottom: 1px solid #dce3ed;
+}
+.packet-protocol-tree summary {
+  padding: 10px 14px;
+  background: #eaf0f8;
+  cursor: pointer;
+  font-weight: 500;
+}
+.packet-protocol-tree dl {
+  margin: 0;
+  padding: 8px 20px;
+}
+.packet-protocol-tree dl > div {
+  display: flex;
+  gap: 20px;
+  padding: 5px 0;
+}
+.packet-protocol-tree dt {
+  min-width: 100px;
+  color: #657388;
+}
+.packet-protocol-tree dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.packet-protocol-tree pre {
+  margin: 0;
+  overflow: auto;
+  padding: 12px 18px;
+  font: 11px/1.8 monospace;
+  white-space: pre;
+}
+.packet-protocol-tree small,
+.packet-protocol-tree > p {
+  display: block;
+  padding: 10px 15px;
+  color: #657388;
+  font-size: 11px;
+}
+.packet-analyzer tbody tr {
+  cursor: pointer;
+}
+.packet-analyzer tbody tr:hover {
+  background: #eaf2fa;
+}

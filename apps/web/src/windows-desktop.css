@@ -1,0 +1,669 @@
+﻿.laptop-desktop-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: #0c3e86;
+}
+.laptop-desktop-overlay[hidden] {
+  display: none;
+}
+.view-laptop .world-hud {
+  display: none;
+}
+.win11 {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: #20232a;
+  font:
+    14px/1.4 "Segoe UI",
+    Arial,
+    sans-serif;
+  isolation: isolate;
+}
+.win11 * {
+  box-sizing: border-box;
+}
+.win11 input {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-radius: 0;
+}
+.win11 input::placeholder {
+  color: #687587;
+}
+.win11 nav > button:hover {
+  background: #e6eef8;
+}
+.win11 button {
+  font: inherit;
+  cursor: default;
+  color: inherit;
+  border: 0;
+  background: none;
+}
+.win11 button:focus-visible,
+.win11 input:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+.win-wallpaper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.win-leave {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #edf5ffed !important;
+  border: 1px solid #ffffff80 !important;
+  border-radius: 6px;
+  padding: 10px 14px;
+  z-index: 80;
+  box-shadow: 0 3px 15px #001c5220;
+}
+.win-leave kbd {
+  font:
+    11px "Segoe UI",
+    sans-serif;
+  opacity: 0.6;
+}
+.win-shortcuts {
+  position: absolute;
+  left: 14px;
+  top: 24px;
+  display: grid;
+  gap: 15px;
+}
+.win-shortcuts button {
+  width: 88px;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 8px 3px;
+  font-size: 12px;
+  text-shadow: 0 1px 4px #000b;
+}
+.win-shortcuts button:hover,
+.win-shortcuts button:focus {
+  background: #ffffff23;
+  border-color: #ffffff3b;
+}
+.win-shortcuts svg {
+  width: 37px;
+  height: 37px;
+  filter: drop-shadow(0 2px 2px #0004);
+}
+.win-folder-icon {
+  color: #e5af2a;
+  fill: #ffd774;
+  stroke-width: 1.3;
+}
+.win-shortcut-computer {
+  color: #d8e8ff;
+  fill: #1a67b6;
+  stroke-width: 1.3;
+}
+.win-notepad-icon {
+  color: #d9edff;
+  fill: #318cd0;
+  stroke-width: 1.4;
+}
+.win-taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 52px;
+  background: #ecf4fbea;
+  backdrop-filter: blur(28px);
+  border-top: 1px solid #ffffff91;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.win-taskbar-center {
+  display: flex;
+  gap: 5px;
+}
+.win-taskbar button {
+  width: 42px;
+  height: 42px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.win-taskbar button:hover,
+.win-taskbar button.active {
+  background: #ffffffa3;
+}
+.win-taskbar button.running:after {
+  content: "";
+  width: 7px;
+  height: 3px;
+  position: absolute;
+  bottom: 2px;
+  background: #8c929b;
+  border-radius: 4px;
+}
+.win-taskbar button.active:after {
+  width: 18px;
+  background: #0078d4;
+}
+.win-logo {
+  width: 23px;
+  height: 23px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.win-logo i {
+  background: #087dea;
+}
+.win-tray {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 11px;
+}
+.win-tray button {
+  width: auto;
+  gap: 7px;
+  padding: 0 7px;
+}
+.win-tray time {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-size: 12px;
+}
+.win-start {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 610px;
+  max-width: calc(100% - 24px);
+  height: 575px;
+  max-height: calc(100% - 140px);
+  background: #f3f7fdf5;
+  backdrop-filter: blur(35px);
+  border: 1px solid #fff9;
+  border-radius: 9px;
+  box-shadow: 0 15px 55px #061d5550;
+  z-index: 90;
+  padding: 30px 30px 80px;
+  overflow: auto;
+}
+.win-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffffdf;
+  border: 1px solid #d8dde5;
+  border-bottom: 2px solid #177bcc;
+  border-radius: 5px;
+  padding: 10px 13px;
+}
+.win-search input {
+  font:
+    14px "Segoe UI",
+    sans-serif;
+  border: 0;
+  outline: none;
+  background: none;
+  width: 100%;
+  color: #252c35;
+}
+.win-start-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 10px 20px;
+  font-size: 13px;
+}
+.win-start-heading span {
+  font-size: 11px;
+  color: #667183;
+}
+.win-pinned {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.win-pinned button {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 6px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.win-pinned button:hover {
+  background: #fff9;
+}
+.win-recommended {
+  display: block;
+  margin: 38px 10px 12px;
+  font-size: 13px;
+}
+.win-no-recent {
+  font-size: 12px;
+  color: #697586;
+  margin: 0 10px;
+}
+.win-start > footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #e7eef7cc;
+  border-top: 1px solid #d9e2ee;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.win-start > footer span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+.win-start > footer button {
+  padding: 7px;
+  border-radius: 4px;
+}
+.win-start > footer button:hover {
+  background: #fff8;
+}
+.win-window {
+  position: absolute;
+  width: 760px;
+  height: 510px;
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 65px);
+  background: #f9fbff;
+  border: 1px solid #c3d0e2;
+  border-radius: 9px;
+  box-shadow: 0 15px 45px #061b4b44;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.win-window.focused {
+  box-shadow: 0 18px 65px #061b4b77;
+}
+.win-window.maximized {
+  top: 64px !important;
+  width: 100%;
+  height: calc(100% - 116px);
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+}
+.win-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 41px;
+  background: #e9eff8;
+  user-select: none;
+  touch-action: none;
+}
+.win-titlebar > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-left: 15px;
+  font-size: 12px;
+}
+.win-window-controls {
+  display: flex;
+  align-self: stretch;
+}
+.win-window-controls button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  border-radius: 0;
+}
+.win-window-controls button:hover {
+  background: #dce4ef;
+}
+.win-window-controls button:last-child:hover {
+  background: #c42b1c;
+  color: white;
+}
+.win-commandbar {
+  display: flex;
+  gap: 29px;
+  padding: 15px 22px;
+  border-bottom: 1px solid #e1e6ee;
+  background: #ffffff;
+  font-size: 12px;
+}
+.win-address {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 12px 15px;
+  border: 1px solid #dae1ea;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+}
+.win-address button {
+  display: grid;
+  place-items: center;
+}
+.win-files,
+.win-notes {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.win-file-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.win-file-layout nav {
+  width: 165px;
+  padding: 15px 8px;
+  background: #f3f6fb;
+  flex-shrink: 0;
+}
+.win-file-layout nav button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 11px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  text-align: left;
+}
+.win-file-layout nav button.selected {
+  background: #dce9f7;
+}
+.win-file-content {
+  flex: 1;
+  padding: 5px 24px;
+  overflow: auto;
+  background: #fff;
+}
+.win-file-content h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 20px 0 14px;
+}
+.win-folder-list {
+  display: flex;
+  gap: 25px;
+}
+.win-folder-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 4px;
+}
+.win-folder-list button:hover {
+  background: #eef5fd;
+}
+.win-drive {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+.win-drive > div {
+  width: 200px;
+}
+.win-drive small {
+  color: #687688;
+}
+.win-storage {
+  height: 11px;
+  border: 1px solid #cad3de;
+  margin: 7px 0;
+  background: #e6eaf0;
+}
+.win-storage i {
+  display: block;
+  width: 36%;
+  height: 100%;
+  background: #1588d1;
+}
+.win-empty {
+  text-align: center;
+  font-size: 12px;
+  color: #738093;
+  padding-top: 35px;
+}
+.win-files > footer,
+.win-notes > footer {
+  padding: 8px 18px;
+  border-top: 1px solid #e2e7ef;
+  font-size: 11px;
+  background: #f5f8fd;
+}
+.win-notes textarea {
+  flex: 1;
+  min-height: 0;
+  resize: none;
+  border: 0;
+  outline: 0;
+  padding: 22px;
+  font:
+    15px/1.65 Consolas,
+    monospace;
+  background: #fff;
+  color: #1f2937;
+}
+.win-notes footer {
+  display: flex;
+  justify-content: space-between;
+}
+.win-settings {
+  padding: 25px 35px;
+  overflow: auto;
+}
+.win-settings h1 {
+  font-size: 27px;
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+.win-device {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.win-device h2 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.win-device p,
+.win-setting-card p {
+  font-size: 12px;
+  color: #626f81;
+  margin: 0;
+}
+.win-setting-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #e3e8ef;
+  border-radius: 7px;
+  background: #fff;
+  margin-bottom: 10px;
+}
+.win-setting-card > div {
+  flex: 1;
+}
+.win-setting-card h3 {
+  margin: 0 0 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.win-setting-card label {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+}
+.win11 input[type="range"] {
+  accent-color: #087dc1;
+}
+.win-quick {
+  position: absolute;
+  right: 15px;
+  bottom: 65px;
+  width: 330px;
+  background: #f3f7fdf5;
+  border: 1px solid #fff9;
+  border-radius: 9px;
+  box-shadow: 0 15px 55px #061d5550;
+  z-index: 95;
+  padding: 25px;
+}
+.win-quick > div,
+.win-quick label,
+.win-quick > span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+}
+.win-quick label {
+  margin: 28px 0;
+}
+.win-quick input {
+  flex: 1;
+}
+@media (max-width: 700px) {
+  .win-tray {
+    position: static;
+    flex-shrink: 0;
+    margin-left: 8px;
+    padding-right: 7px;
+    gap: 5px;
+    right: 7px;
+  }
+  .win-tray > svg,
+  .win-tray > span {
+    display: none;
+  }
+  .win-tray button {
+    padding: 0 3px;
+  }
+  .win-tray button svg:nth-child(2) {
+    display: none;
+  }
+  .win-tray time {
+    font-size: 10px;
+  }
+  .win-taskbar {
+    justify-content: flex-start;
+    padding-left: 7px;
+  }
+  .win-taskbar-center {
+    flex: 1;
+    min-width: 0;
+    gap: 1px;
+    max-width: none;
+    overflow-x: auto;
+  }
+  .win-taskbar-center button {
+    width: 35px;
+    flex-shrink: 0;
+  }
+  .win-taskbar-center .win-taskbar-optional:not(.running) {
+    display: none;
+  }
+  .win-leave {
+    right: 12px;
+    top: 12px;
+    padding: 9px;
+    font-size: 11px;
+  }
+  .win-window {
+    left: 8px !important;
+    top: 64px !important;
+    max-width: calc(100% - 16px);
+    height: calc(100% - 125px);
+  }
+  .win-window.maximized {
+    top: 64px !important;
+    left: 0 !important;
+    height: calc(100% - 116px);
+    max-width: none;
+  }
+  .win-file-layout nav {
+    width: 112px;
+  }
+  .win-file-layout nav button {
+    font-size: 10px;
+    padding: 10px 4px;
+  }
+  .win-file-content {
+    padding: 3px 12px;
+  }
+  .win-folder-list {
+    flex-direction: column;
+    gap: 0;
+  }
+  .win-drive > div {
+    width: 120px;
+  }
+  .win-settings {
+    padding: 24px 16px;
+  }
+  .win-setting-card label {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .win-start {
+    padding: 23px 18px 80px;
+  }
+  .win-start-heading {
+    gap: 12px;
+  }
+  .win-start-heading span {
+    display: none;
+  }
+  .win-shortcuts {
+    top: 65px;
+  }
+  .win-pinned {
+    gap: 3px;
+  }
+  .win-recommended {
+    margin-top: 25px;
+  }
+}

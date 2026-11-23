@@ -1,0 +1,228 @@
+.challenge-catalog {
+  padding: 24px;
+  container-type: inline-size;
+  color: #dce9ef;
+}
+.catalog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #3c5362;
+}
+.catalog-heading h1 {
+  font:
+    500 28px "Space Grotesk",
+    sans-serif;
+  margin: 0 0 6px;
+}
+.catalog-heading p {
+  color: #afbfca;
+  font-size: 13px;
+  margin: 0;
+}
+.catalog-heading > span {
+  color: #b8d5c3;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 178px minmax(0, 1fr);
+  gap: 22px;
+  padding-top: 20px;
+}
+.catalog-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.catalog-categories button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  min-height: 44px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #b7c6d1;
+  text-align: left;
+  font-size: 12px;
+}
+.catalog-categories button[aria-pressed="true"] {
+  background: #2d4654;
+  color: #eef7fc;
+  border-color: #557485;
+}
+.catalog-count {
+  margin-left: auto;
+  font-size: 11px;
+  color: #adc4d2;
+}
+.catalog-results {
+  min-width: 0;
+  scroll-margin-top: 16px;
+}
+.catalog-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.catalog-toolbar h2 {
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0;
+}
+.catalog-toolbar label {
+  display: grid;
+  gap: 5px;
+  max-width: 100%;
+  font-size: 11px;
+  color: #b7c6d1;
+}
+.catalog-toolbar select {
+  width: 260px;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 6px 8px;
+  background: #182b39;
+  border: 1px solid #526c7d;
+  border-radius: 4px;
+  color: #deebf4;
+  font-size: 12px;
+}
+.catalog-range {
+  font-size: 12px;
+  color: #aebfcd;
+  margin: 14px 0;
+}
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+  min-width: 0;
+  border: 1px solid #465f70;
+  border-radius: 5px;
+  background: #213646;
+}
+.catalog-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  color: #b9d2df;
+  font-size: 12px;
+}
+.catalog-difficulty {
+  font-weight: 600;
+}
+.catalog-difficulty.is-easy {
+  color: #b5e4c1;
+}
+.catalog-difficulty.is-medium {
+  color: #f2d18b;
+}
+.catalog-difficulty.is-hard {
+  color: #ffb8ad;
+}
+.catalog-card h3 {
+  font:
+    500 19px "Space Grotesk",
+    sans-serif;
+  margin: 14px 0 7px;
+  color: #edf4f8;
+}
+.catalog-card-category {
+  margin: 0;
+  font-size: 11px;
+  color: #acbfcd;
+  line-height: 1.5;
+}
+.catalog-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #b9c9d4;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 12px 0;
+}
+.catalog-state {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: auto;
+  margin-bottom: 12px;
+  font-size: 11px;
+  color: #b9c6d1;
+}
+.catalog-state.is-solved {
+  color: #afe0c0;
+}
+.catalog-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.catalog-card-actions button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #718b9b;
+  border-radius: 4px;
+  background: #2c485b;
+  color: #dfedf5;
+  font-size: 11px;
+}
+.catalog-card-actions button:first-child {
+  background: #afd9c0;
+  color: #163426;
+  border-color: #afd9c0;
+}
+.challenge-catalog button:hover:not(:disabled) {
+  filter: brightness(1.15);
+}
+.challenge-catalog :is(button, select):focus-visible {
+  outline: 2px solid #a3d7fa;
+  outline-offset: 3px;
+}
+@container (max-width: 700px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .catalog-categories {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .catalog-categories button {
+    flex: 1 0 auto;
+    gap: 8px;
+  }
+}
+@container (max-width: 460px) {
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .catalog-toolbar label,
+  .catalog-toolbar select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,244 @@
+.domain-tool {
+  height: 100%;
+  min-height: 0;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #edf2f7;
+  color: #24394d;
+  font:
+    13px/1.5 Inter,
+    Arial,
+    sans-serif;
+}
+.domain-tool header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.domain-tool h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.domain-tool header p {
+  margin: 4px 0 0;
+  color: #546c80;
+}
+.domain-tool header > span {
+  margin-left: auto;
+  white-space: nowrap;
+  padding: 5px 9px;
+  border-radius: 4px;
+  background: #dfe5ec;
+  color: #4b5b69;
+  font-size: 11px;
+}
+.domain-tool header > span.is-connected {
+  background: #d5e9df;
+  color: #285a46;
+}
+.domain-hosts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 12px;
+  background: #dce6ef;
+  border: 1px solid #afc1d0;
+  margin-bottom: 18px;
+}
+.domain-hosts span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.domain-tool label {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.domain-tool input,
+.domain-tool select,
+.domain-tool textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+  min-height: 44px;
+  padding: 9px;
+  border: 1px solid #9eafbe;
+  border-radius: 4px;
+  background: #fff;
+  color: #24394d;
+  font: 13px/1.5 monospace;
+}
+.domain-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.domain-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+.domain-tool button,
+.windows-domain-status button {
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1px solid #8ea8be;
+  border-radius: 4px;
+  background: #fff;
+  color: #27465e;
+  font:
+    13px/1.4 Inter,
+    Arial,
+    sans-serif;
+  cursor: pointer;
+}
+.domain-tool button:hover:not(:disabled) {
+  background: #dce8f2;
+}
+.domain-tool button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.domain-tool :focus-visible,
+.windows-domain-status :focus-visible {
+  outline: 2px solid #287ca8;
+  outline-offset: 2px;
+}
+.domain-results {
+  border-top: 1px solid #b5c4d1;
+  padding-top: 10px;
+  margin-top: 18px;
+}
+.domain-results textarea {
+  min-height: 200px;
+  resize: vertical;
+  background: #142330;
+  color: #d0e4f0;
+  font: 12px/1.7 monospace;
+}
+.domain-results .kit-copy-control {
+  display: inline-flex;
+  margin: 8px 10px 0 0;
+}
+.domain-tool h3 {
+  font-size: 13px;
+  margin: 7px 0;
+}
+.domain-footnote {
+  font-size: 12px;
+  color: #587084;
+  margin-top: 18px;
+  overflow-wrap: anywhere;
+}
+.domain-file-name {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.domain-tool pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 12px/1.6 monospace;
+  max-height: 230px;
+  overflow: auto;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #c6d2dc;
+}
+.domain-tool details {
+  margin-top: 18px;
+}
+.domain-picker {
+  background: #fff;
+  padding: 12px;
+  border: 1px solid #b5c4d1;
+}
+.domain-tool [role="alert"] {
+  color: #963729;
+}
+.windows-domain-status {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 24px;
+  background: #f5f6f8;
+  color: #253644;
+  font:
+    13px/1.6 "Segoe UI",
+    Arial,
+    sans-serif;
+}
+.windows-domain-status h1 {
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+.windows-domain-status h2 {
+  font-size: 17px;
+  margin-top: 24px;
+}
+.windows-domain-status dl {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 10px;
+  background: white;
+  border: 1px solid #dde2e7;
+  border-radius: 8px;
+  padding: 16px;
+}
+.windows-domain-status dt {
+  font-weight: 600;
+}
+.windows-domain-status dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.domain-event-scroll {
+  overflow: auto;
+}
+.domain-event-scroll table {
+  border-collapse: collapse;
+  min-width: 550px;
+  width: 100%;
+  background: #fff;
+}
+.domain-event-scroll th,
+.domain-event-scroll td {
+  text-align: left;
+  border-bottom: 1px solid #dde2e7;
+  padding: 10px;
+}
+.window-domain,
+.window-credentials {
+  width: 960px;
+  height: 650px;
+}
+@media (max-width: 600px) {
+  .domain-tool {
+    padding: 12px;
+  }
+  .domain-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .domain-tool header {
+    flex-wrap: wrap;
+  }
+  .domain-tool header > span {
+    margin-left: 0;
+  }
+  .windows-domain-status {
+    padding: 16px;
+  }
+  .windows-domain-status dl {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .windows-domain-status dd {
+    margin-bottom: 9px;
+  }
+}

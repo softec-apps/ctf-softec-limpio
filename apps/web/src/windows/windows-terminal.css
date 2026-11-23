@@ -1,0 +1,208 @@
+.win-terminal {
+  --win-terminal-bg: #101722;
+  --win-terminal-panel: #192432;
+  --win-terminal-border: #3e5368;
+  --win-terminal-text: #e5edf6;
+  --win-terminal-muted: #b6c7d8;
+  --win-terminal-accent: #9fceff;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--win-terminal-bg);
+  color: var(--win-terminal-text);
+  font:
+    13px/1.5 Consolas,
+    "Courier New",
+    monospace;
+}
+.win-terminal-status,
+.win-terminal-target {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--win-terminal-panel);
+  border-bottom: 1px solid var(--win-terminal-border);
+}
+.win-terminal-status {
+  justify-content: space-between;
+}
+.win-terminal-status > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.win-terminal-status span,
+.win-terminal-context,
+.win-terminal-welcome {
+  color: var(--win-terminal-muted);
+}
+.win-terminal button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 12px;
+  color: var(--win-terminal-text);
+  background: #29445f;
+  border: 1px solid #587692;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.win-terminal button:hover:not(:disabled) {
+  background: #355779;
+}
+.win-terminal button:disabled {
+  opacity: 0.55;
+}
+.win-terminal-target {
+  align-items: end;
+}
+.win-terminal-target label {
+  display: grid;
+  flex: 1;
+  gap: 5px;
+  min-width: 0;
+  color: var(--win-terminal-muted);
+}
+.win-terminal-target select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  border: 1px solid var(--win-terminal-border);
+  border-radius: 4px;
+  background: var(--win-terminal-bg);
+  color: var(--win-terminal-text);
+  padding: 8px;
+  font: inherit;
+}
+.win-terminal-context {
+  margin: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--win-terminal-border);
+  overflow-wrap: anywhere;
+}
+.win-terminal-linux {
+  flex-shrink: 0;
+  max-height: 180px;
+  overflow: auto;
+  padding: 8px 14px;
+  color: var(--win-terminal-muted);
+  border-bottom: 1px solid var(--win-terminal-border);
+}
+.win-terminal-linux summary {
+  min-height: 28px;
+  padding: 4px 0;
+  color: var(--win-terminal-accent);
+  cursor: pointer;
+}
+.win-terminal-linux p {
+  margin: 8px 0;
+}
+.win-terminal-linux code {
+  overflow-wrap: anywhere;
+  font: inherit;
+  color: var(--win-terminal-text);
+}
+.win-terminal-connection {
+  display: block;
+  user-select: text;
+}
+.win-terminal-error {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 14px;
+  background: #4b2529;
+  color: #ffe2e3;
+  overflow-wrap: anywhere;
+}
+.win-terminal-output {
+  flex: 1;
+  min-height: 100px;
+  overflow: auto;
+  padding: 14px;
+  user-select: text;
+}
+.win-terminal-output p {
+  margin: 0 0 14px;
+}
+.win-terminal-entry {
+  margin-bottom: 14px;
+}
+.win-terminal-entry pre {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+}
+.win-terminal-entry .win-terminal-command {
+  margin-bottom: 4px;
+  color: var(--win-terminal-accent);
+}
+.win-terminal-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--win-terminal-panel);
+  border-top: 1px solid var(--win-terminal-border);
+}
+.win-terminal-form label {
+  width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--win-terminal-accent);
+}
+.win-terminal-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px;
+  background: var(--win-terminal-bg);
+  border: 1px solid var(--win-terminal-border);
+  border-radius: 4px;
+  color: var(--win-terminal-text);
+  font: inherit;
+}
+.win-terminal-form input::placeholder {
+  color: var(--win-terminal-muted);
+}
+.win-terminal :is(input, select, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--win-terminal-accent);
+  outline-offset: 2px;
+}
+@media (max-width: 480px) {
+  .win-terminal-status,
+  .win-terminal-target,
+  .win-terminal-form {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+  .win-terminal-status {
+    align-items: start;
+  }
+  .win-terminal-status button {
+    font-size: 11px;
+    padding: 8px;
+  }
+  .win-terminal-target {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .win-terminal-output {
+    padding: 10px;
+  }
+  .win-terminal button {
+    padding: 8px;
+  }
+}

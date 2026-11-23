@@ -1,0 +1,64 @@
+.terminal-workspace {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.terminal-copy-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 4px 10px;
+  background: #1a2330;
+  color: #bfccdb;
+  font-size: 11px;
+  min-height: 30px;
+}
+.terminal-copy-control {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.terminal-copy-control button {
+  border: 1px solid #455a70;
+  border-radius: 4px;
+  padding: 4px 9px;
+  background: #263747;
+  color: #e7f1fa;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.terminal-copy-control button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.terminal-copy-control button:focus-visible {
+  outline: 2px solid #9adac3;
+  outline-offset: 2px;
+}
+.terminal-copy-control [role="status"] {
+  color: #c2decf;
+  font-size: 11px;
+}
+.terminal-copy-toolbar > button {
+  border: 1px solid #455a70;
+  border-radius: 4px;
+  padding: 4px 9px;
+  background: #263747;
+  color: #e7f1fa;
+  font: inherit;
+  cursor: pointer;
+}
+.terminal-copy-toolbar > button:focus-visible {
+  outline: 2px solid #9adac3;
+  outline-offset: 2px;
+}
+.terminal-copy-toolbar [role="alert"] {
+  color: #ffcfb0;
+}

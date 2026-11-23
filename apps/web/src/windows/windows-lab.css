@@ -1,0 +1,351 @@
+.win-window[hidden] {
+  display: none;
+}
+.win-lab-message,
+.win-lab-login {
+  padding: 24px;
+}
+.win-lab-login {
+  max-width: 420px;
+  overflow: auto;
+}
+.win-lab-login label,
+.win-case-detail label {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+.win-lab-login input,
+.win-case-detail input,
+.win-event-viewer input,
+.win-event-viewer select {
+  border: 1px solid #aebcca;
+  background: #fff;
+  color: #243443;
+  padding: 7px;
+  border-radius: 4px;
+  min-width: 0;
+  width: 100%;
+}
+.win-lab-login button,
+.win-case-detail button,
+.win-case-hub nav button,
+.win-virtual-view button,
+.win-virtual-address button {
+  padding: 8px 11px;
+  border: 1px solid #aebcca;
+  background: #f5f8fc;
+  border-radius: 4px;
+}
+.win-lab-primary {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: #176fb3 !important;
+  color: white !important;
+}
+.win-case-hub {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding: 17px 22px;
+  background: #f7f9fc;
+}
+.win-case-hub header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+.win-case-hub h1 {
+  font-size: 20px;
+  margin: 0;
+}
+.win-case-hub header > span {
+  font-size: 12px;
+  color: #526276;
+}
+.win-case-list {
+  display: grid;
+  gap: 8px;
+}
+.win-case-list > button {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  padding: 13px;
+  min-height: 49px;
+  border: 1px solid #dae2eb;
+  border-radius: 4px;
+  background: white;
+}
+.win-case-list > button > span {
+  flex: 1;
+}
+.win-case-list small {
+  color: #536579;
+}
+.win-case-hub nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+.win-case-detail {
+  max-width: 650px;
+}
+.win-case-detail h2 {
+  margin-top: 18px;
+  font-size: 21px;
+}
+.win-case-detail p {
+  line-height: 1.7;
+}
+.win-case-detail form {
+  display: flex;
+  align-items: end;
+  gap: 9px;
+  margin-top: 15px;
+}
+.win-case-detail form label {
+  flex: 1;
+  margin: 0;
+  min-width: 0;
+}
+.win-case-detail form button {
+  min-height: 37px;
+}
+.win-virtual-explorer {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.win-virtual-address {
+  display: flex;
+  gap: 7px;
+  align-items: end;
+  padding: 9px;
+  border-bottom: 1px solid #dce4ed;
+}
+.win-virtual-address label {
+  flex: 1;
+  display: grid;
+  gap: 3px;
+  font-size: 11px;
+  min-width: 0;
+}
+.win-virtual-address input {
+  border: 1px solid #b4c1d1;
+  padding: 6px;
+  min-width: 0;
+  width: 100%;
+  background: #f9fbfd;
+}
+.win-virtual-layout {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.win-virtual-layout nav {
+  width: 140px;
+  flex-shrink: 0;
+  padding: 8px;
+  background: #f6f9fc;
+  border-right: 1px solid #dde4ec;
+}
+.win-virtual-layout nav button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding: 10px 5px;
+  text-align: left;
+}
+.win-virtual-files {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  padding: 8px 12px;
+}
+.win-virtual-view {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 9px;
+  margin-bottom: 8px;
+}
+.win-virtual-view label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+}
+.win-virtual-view input[type="checkbox"] {
+  appearance: auto;
+  width: 14px;
+  height: 14px;
+}
+.win-virtual-files ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.win-virtual-files li button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 10px 6px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.win-virtual-files li button.selected {
+  background: #dfefff;
+}
+.win-virtual-files li button span {
+  flex: 1;
+  min-width: 0;
+}
+.win-virtual-files li button small {
+  color: #768396;
+  font-size: 10px;
+}
+.win-virtual-explorer > footer {
+  padding: 5px 10px;
+  color: #5e6d7d;
+  border-top: 1px solid #dce4ed;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+.win-event-viewer {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 18px;
+  overflow: auto;
+  background: #fff;
+}
+.win-event-viewer h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.win-event-viewer header p {
+  font-size: 11px;
+  color: #617084;
+}
+.win-event-viewer label {
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+}
+.win-event-viewer select {
+  max-width: 100%;
+}
+.win-event-filters {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 9px;
+  margin: 10px 0;
+}
+.win-event-table {
+  overflow: auto;
+}
+.win-event-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.win-event-table th,
+.win-event-table td {
+  text-align: left;
+  padding: 7px;
+  border-bottom: 1px solid #dce4ed;
+}
+.win-event-table tr[aria-selected="true"] {
+  background: #e1effe;
+}
+.win-event-table button {
+  color: #135b9e;
+  text-align: left;
+}
+.win-event-viewer pre {
+  font:
+    12px/1.6 Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  padding: 12px;
+  background: #f1f5fa;
+}
+.win-file-properties {
+  padding: 18px;
+  overflow: auto;
+  flex: 1;
+}
+.win-file-properties h2 {
+  margin: 0 0 16px;
+}
+.win-file-properties dl > div {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 12px;
+  margin: 12px 0;
+}
+.win-file-properties dt {
+  color: #66768a;
+}
+.win-file-properties dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .win-taskbar-center {
+    max-width: 100%;
+    overflow-x: auto;
+    gap: 1px;
+  }
+  .win-taskbar-center button {
+    flex-shrink: 0;
+    width: 34px;
+    padding: 4px;
+  }
+  .win-tray {
+    display: none;
+  }
+  .win-shortcuts {
+    grid-template-columns: repeat(2, 80px);
+  }
+  .win-case-hub {
+    padding: 13px;
+  }
+  .win-case-hub header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .win-virtual-layout nav {
+    width: 102px;
+    padding: 4px;
+  }
+  .win-virtual-layout nav button {
+    font-size: 11px;
+  }
+  .win-event-filters {
+    grid-template-columns: 1fr;
+  }
+  .win-case-detail form {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+.win-case-detail .flag-input {
+  --flag-input-bg: #fff;
+  --flag-input-text: #243443;
+  --flag-input-border: #aebcca;
+  --flag-input-marker: #52687c;
+  --flag-input-focus: #176fb3;
+}

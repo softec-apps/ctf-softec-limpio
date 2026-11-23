@@ -1,0 +1,59 @@
+.service-console {
+  height: 100%;
+  overflow: auto;
+  padding: 20px;
+  background: #edf2f8;
+  color: #20344e;
+}
+.service-console h2 {
+  color: #20344e;
+  font-size: 20px;
+}
+.service-console label {
+  display: grid;
+  gap: 7px;
+  font-weight: 600;
+}
+.service-console select,
+.service-console textarea {
+  width: 100%;
+  background: #fff;
+  color: #20344e;
+  border: 1px solid #a4b6cb;
+  border-radius: 5px;
+  padding: 10px;
+}
+.service-console textarea {
+  min-height: 160px;
+  font: 14px/1.5 monospace;
+  resize: vertical;
+}
+.service-console nav {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 10px 0;
+  align-items: center;
+}
+.service-console pre {
+  background: #142333;
+  color: #cde5ed;
+  padding: 14px;
+  overflow: auto;
+  min-height: 100px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.service-console button {
+  background: #244f70;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+.service-console button:disabled {
+  opacity: 0.55;
+}
+.service-console-hint {
+  font-size: 12px;
+}
+.service-console .kit-copy-control button{background:#244f70;color:#fff;border:1px solid #244f70}
