@@ -1,7 +1,5 @@
 # Avisos de terceros
 
-La fotografía panorámica de Guaranda y su adaptación se distribuyen bajo CC BY-SA 2.0. La autoría y la fuente figuran en los [créditos de la fotografía](apps/web/public/assets/credits.html).
-
 A continuación se reproducen los avisos de los paquetes de la interfaz, incluida la fuente Caveat bajo SIL Open Font License 1.1. Las dependencias que instala npm llevan sus licencias en sus respectivos paquetes.
 
 ## @fontsource/caveat 5.3.0
